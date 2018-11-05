@@ -3,45 +3,45 @@ package com.chatbot.taxchatbot.model;
 public class Exemption {
 	
 	private String billId;
-	private String exemptPR;
-	private String exemptCorp;
-	private String exemptLess;
-	private String exemptGov;
-	private String totalExempt;
+	private double exemptPR;
+	private double exemptCorp;
+	private double exemptLess;
+	private double exemptGov;
+	private double totalExempt;
 	public String getBillId() {
 		return billId;
 	}
 	public void setBillId(String billId) {
 		this.billId = billId;
 	}
-	public String getExemptPR() {
+	public double getExemptPR() {
 		return exemptPR;
 	}
-	public void setExemptPR(String exemptPR) {
+	public void setExemptPR(double exemptPR) {
 		this.exemptPR = exemptPR;
 	}
-	public String getExemptCorp() {
+	public double getExemptCorp() {
 		return exemptCorp;
 	}
-	public void setExemptCorp(String exemptCorp) {
+	public void setExemptCorp(double exemptCorp) {
 		this.exemptCorp = exemptCorp;
 	}
-	public String getExemptLess() {
+	public double getExemptLess() {
 		return exemptLess;
 	}
-	public void setExemptLess(String exemptLess) {
+	public void setExemptLess(double exemptLess) {
 		this.exemptLess = exemptLess;
 	}
-	public String getExemptGov() {
+	public double getExemptGov() {
 		return exemptGov;
 	}
-	public void setExemptGov(String exemptGov) {
+	public void setExemptGov(double exemptGov) {
 		this.exemptGov = exemptGov;
 	}
-	public String getTotalExempt() {
+	public double getTotalExempt() {
 		return totalExempt;
 	}
-	public void setTotalExempt(String totalExempt) {
+	public void setTotalExempt(double totalExempt) {
 		this.totalExempt = totalExempt;
 	}
 

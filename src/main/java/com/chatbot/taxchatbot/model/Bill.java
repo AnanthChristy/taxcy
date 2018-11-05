@@ -9,12 +9,12 @@ public class Bill {
     private String year;
     private String month;
     private Date payDate;
-    private String grossIncome;
+    private double grossIncome;
     private Exemption exemption;
-    private String taxableIncome;
-    private String taxDue;
-    private String penalties;
-    private String totalTaxDue;
+    private double taxableIncome;
+    private double taxDue;
+    private double penalties;
+    private double totalTaxDue;
 	public String getBillId() {
 		return billId;
 	}
@@ -45,10 +45,10 @@ public class Bill {
 	public void setPayDate(Date payDate) {
 		this.payDate = payDate;
 	}
-	public String getGrossIncome() {
+	public double getGrossIncome() {
 		return grossIncome;
 	}
-	public void setGrossIncome(String grossIncome) {
+	public void setGrossIncome(double grossIncome) {
 		this.grossIncome = grossIncome;
 	}
 	public Exemption getExemption() {
@@ -57,28 +57,28 @@ public class Bill {
 	public void setExemption(Exemption exemption) {
 		this.exemption = exemption;
 	}
-	public String getTaxableIncome() {
+	public double getTaxableIncome() {
 		return taxableIncome;
 	}
-	public void setTaxableIncome(String taxableIncome) {
+	public void setTaxableIncome(double taxableIncome) {
 		this.taxableIncome = taxableIncome;
 	}
-	public String getTaxDue() {
+	public double getTaxDue() {
 		return taxDue;
 	}
-	public void setTaxDue(String taxDue) {
+	public void setTaxDue(double taxDue) {
 		this.taxDue = taxDue;
 	}
-	public String getPenalties() {
+	public double getPenalties() {
 		return penalties;
 	}
-	public void setPenalties(String penalties) {
+	public void setPenalties(double penalties) {
 		this.penalties = penalties;
 	}
-	public String getTotalTaxDue() {
+	public double getTotalTaxDue() {
 		return totalTaxDue;
 	}
-	public void setTotalTaxDue(String totalTaxDue) {
+	public void setTotalTaxDue(double totalTaxDue) {
 		this.totalTaxDue = totalTaxDue;
 	}
     
