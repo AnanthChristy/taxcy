@@ -3,6 +3,9 @@ package com.chatbot.taxchatbot.model;
 public class Address {
     private String street;
     private String apt;
+    private String city;
+    private String state;
+    private long zipCode;
 
     public String getStreet() {
         return street;
@@ -44,7 +47,5 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-    private String city;
-    private String state;
-    private long zipCode;
+
 }

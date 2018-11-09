@@ -1,5 +1,6 @@
 package com.chatbot.taxchatbot.dao;
 
+import com.chatbot.taxchatbot.model.Bill;
 import com.chatbot.taxchatbot.model.PropertyInfo;
 import org.springframework.stereotype.Service;
 
@@ -30,9 +31,28 @@ public class TaxServiceDaoImpl implements TaxServiceDao {
         return listOfInfo.values();
     }
 
+
     private String generateUUID(){
         UUID uuid = UUID.randomUUID();
         return uuid.toString();
+    }
+
+    HashMap<String,Bill> listOfTaxBilInfo = new HashMap<>();
+
+    public Bill saveTaxBillInfo(Bill taxBill){
+        listOfTaxBilInfo.put(taxBill.getCertNo(), taxBill);
+        return taxBill;
 
     }
+    public Bill getTaxBillInfo(String certNo) {
+        return listOfTaxBilInfo.get(certNo);
+    }
+    public Collection<Bill> getAllTaxBillInfo() {
+        return listOfTaxBilInfo.values();
+    }
+
+
+
+
+
 }
