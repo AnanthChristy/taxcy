@@ -2,7 +2,6 @@ package com.chatbot.taxchatbot.model;
 
 public class Address {
     private String street;
-    private String apt;
     private String city;
     private String state;
     private long zipCode;
@@ -13,14 +12,6 @@ public class Address {
 
     public void setStreet(String street) {
         this.street = street;
-    }
-
-    public String getApt() {
-        return apt;
-    }
-
-    public void setApt(String apt) {
-        this.apt = apt;
     }
 
     public String getCity() {
