@@ -27,4 +27,4 @@ spring:
       path: /H2/console # this is path to use database console...
       settings:
         trace: false
-        web-allow-others: false
+        web-allow-others: true
