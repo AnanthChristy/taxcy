@@ -1,11 +1,26 @@
 package com.chatbot.taxchatbot.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "PROPERTY_INFO")
 public class PropertyInfo {
 
+    @Id
+    @Column(name = "CERT_NO")
     private String certNo;
+
+    @Column(name = "OWNER_NAME")
     private String ownerName;
+
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "ADDRESS_ID")
     private Address propAdd;
+
+    @Column(name = "EMAIL")
     private String email;
 
     public String getCertNo() {

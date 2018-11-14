@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/chatbot")
@@ -17,7 +18,7 @@ public class ChatBotRestController {
     @Autowired
     private TaxServiceDao taxServiceDao;
 
-    @RequestMapping(value = "/personalInfo",
+    @RequestMapping(value = "/propertyInfo",
             method = RequestMethod.POST,
             produces = { "application/json" },
             consumes = { "application/json" })
@@ -41,6 +42,33 @@ public class ChatBotRestController {
             produces = { "application/json" },
             consumes = { "application/json" })
     public Bill taxBill(@RequestBody Bill bill) throws Exception{
+        Bill calculatedBill = calculateTaxBill(bill);
+        calculatedBill.setStatus("In Progress");
+        return taxServiceDao.saveTaxBillInfo(bill);
+    }
+
+    @RequestMapping(value = "/getTaxBillInfo/{certNo}", produces = {"application/json"})
+    public List<Bill> getTaxBillInfo(@PathVariable("certNo") String certNo) {
+        return taxServiceDao.getTaxBillInfo(certNo);
+    }
+
+    @RequestMapping(value = "/getTaxBillInfo/{certNo}/{year}", produces = {"application/json"})
+    public List<Bill> getTaxBillInfoForYear(@PathVariable("certNo") String certNo, @PathVariable("year") String year) {
+        return taxServiceDao.getTaxBillInfo(certNo, year);
+    }
+
+    @RequestMapping(value = "/getTaxBillInfo/{certNo}/{billId}", produces = {"application/json"})
+    public Bill getTaxBillInfo(@PathVariable("certNo") String certNo, @PathVariable("billId") int billId) {
+        return taxServiceDao.getTaxBillInfo(billId);
+    }
+
+
+    @RequestMapping("/submit/{billId}")
+    public int submitTaxBill(@PathVariable("billId") int billId) {
+        return taxServiceDao.updateStatusOfTaxBill("DONE", billId);
+    }
+
+    private Bill calculateTaxBill(Bill bill) {
         Exemption exemption = bill.getExemption();
         double exemptionPR= exemption.getExemptPR();
         double exemptionCorp= exemption.getExemptCorp();
@@ -51,20 +79,7 @@ public class ChatBotRestController {
         double grossIncome = bill.getGrossIncome();
         double taxableIncome = grossIncome - exemption.getTotalExempt() ;
         bill.setTaxableIncome(taxableIncome);
-        bill.setTaxDue(taxableIncome - (taxableIncome * 0.01));
-        return taxServiceDao.saveTaxBillInfo(bill);
-    }
-
-    @RequestMapping(value = "/getAllTaxBillInfo", produces= {"application/json"})
-    public Collection<Bill> getAllTaxBillInfo(){return taxServiceDao.getAllTaxBillInfo();}
-
-    @RequestMapping(value = "/getTaxBillInfo/{certNo}", produces = {"application/json"})
-    public Bill getTaxBillInfo(@PathVariable("certNo") String certNo) {
-        return taxServiceDao.getTaxBillInfo(certNo);
-    }
-
-    @RequestMapping("/taxreturn")
-    public String taxReturn() {
-        return "Your Tax Return";
+        bill.setTaxDue((taxableIncome * 0.01));
+        return bill;
     }
 }

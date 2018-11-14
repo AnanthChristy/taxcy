@@ -1,26 +1,59 @@
 package com.chatbot.taxchatbot.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "TAX_BILL")
 public class Bill {
-	
-	private String billId;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "TAX_BILL_ID")
+	private int billId;
+
+	@Column(name = "CERT_NO")
 	private String certNo;
+
+	@Column(name = "YEAR")
     private String year;
+
+	@Column(name = "MONTH")
     private String month;
+
+	@Column(name = "PAY_DATE")
     private Date payDate;
+
+	@Column(name = "GROSS_INCOME")
     private double grossIncome;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "EXEMPTION_D")
     private Exemption exemption;
+
+	@Column(name = "TAXABLE_INCOME")
     private double taxableIncome;
+
+	@Column(name = "TAX_DUE")
     private double taxDue;
+
+	@Column(name = "PENALTY")
     private double penalties;
+
+	@Column(name = "TOTAL_TAX_DUE")
     private double totalTaxDue;
-	public String getBillId() {
+
+	@Column(name = "STATUS")
+	private String status;
+
+	public int getBillId() {
 		return billId;
 	}
-	public void setBillId(String billId) {
+
+	public void setBillId(int billId) {
 		this.billId = billId;
 	}
+
 	public String getCertNo() {
 		return certNo;
 	}
@@ -81,6 +114,12 @@ public class Bill {
 	public void setTotalTaxDue(double totalTaxDue) {
 		this.totalTaxDue = totalTaxDue;
 	}
-    
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }

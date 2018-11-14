@@ -1,9 +1,26 @@
 package com.chatbot.taxchatbot.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ADDRESS")
 public class Address {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ADDRESS_ID")
+    private int id;
+
+    @Column(name = "STREET")
     private String street;
+
+    @Column(name = "CITY")
     private String city;
+
+    @Column(name = "STATE")
     private String state;
+
+    @Column(name = "ZIP_CODE")
     private long zipCode;
 
     public String getStreet() {
