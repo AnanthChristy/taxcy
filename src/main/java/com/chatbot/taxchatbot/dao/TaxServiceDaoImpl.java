@@ -1,29 +1,39 @@
 package com.chatbot.taxchatbot.dao;
 
+import com.chatbot.taxchatbot.dao.repository.PropertyRepository;
+import com.chatbot.taxchatbot.dao.repository.TaxBillRepository;
 import com.chatbot.taxchatbot.model.Bill;
 import com.chatbot.taxchatbot.model.PropertyInfo;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
-@Service
+@Repository
 public class TaxServiceDaoImpl implements TaxServiceDao {
 
     HashMap<String,PropertyInfo> listOfInfo = new HashMap<>();
+
+    @Autowired
+    private PropertyRepository propertyRepository;
+
+    @Autowired
+    private TaxBillRepository taxBillRepository;
 
     @Override
     public PropertyInfo savePropertyInfo(PropertyInfo propertyInfo) {
         String certNo = generateUUID();
         propertyInfo.setCertNo(certNo);
-        listOfInfo.put(propertyInfo.getCertNo(), propertyInfo);
+        propertyRepository.save(propertyInfo);
         return propertyInfo;
     }
 
     @Override
     public PropertyInfo getPropertyInfo(String certNo) {
-        return listOfInfo.get(certNo);
+        return propertyRepository.getOne(certNo);
     }
 
     @Override
@@ -37,22 +47,39 @@ public class TaxServiceDaoImpl implements TaxServiceDao {
         return uuid.toString();
     }
 
-    HashMap<String,Bill> listOfTaxBilInfo = new HashMap<>();
-
     public Bill saveTaxBillInfo(Bill taxBill){
-        listOfTaxBilInfo.put(taxBill.getCertNo(), taxBill);
-        return taxBill;
+        //listOfTaxBilInfo.put(taxBill.getCertNo(), taxBill);
+        return taxBillRepository.save(taxBill);
 
     }
-    public Bill getTaxBillInfo(String certNo) {
-        return listOfTaxBilInfo.get(certNo);
-    }
-    public Collection<Bill> getAllTaxBillInfo() {
-        return listOfTaxBilInfo.values();
+    public List<Bill> getTaxBillInfo(String certNo) {
+        return taxBillRepository.findByCertNo(certNo);
     }
 
+    @Override
+    public List<Bill> getTaxBillInfo(String certNo, String year) {
+        return taxBillRepository.findByCertNoAndYear(certNo, year);
+    }
 
+    @Override
+    public List<Bill> getTaxBillInfo(String certNo, String year, String month) {
+        return taxBillRepository.findByCertNoAndYearAndMonth(certNo, year, month);
+    }
 
+    @Override
+    public List<Bill> getTaxBillInfoByStatus(String certNo, String status) {
+        return taxBillRepository.findByCertNoAndStatus(certNo, status);
+    }
+
+    @Override
+    public int updateStatusOfTaxBill(String status, int billId) {
+        return taxBillRepository.updateStatus(status, billId);
+    }
+
+    @Override
+    public Bill getTaxBillInfo(int billId) {
+        return taxBillRepository.getOne(billId);
+    }
 
 
 }

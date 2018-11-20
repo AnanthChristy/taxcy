@@ -4,6 +4,7 @@ import com.chatbot.taxchatbot.model.Bill;
 import com.chatbot.taxchatbot.model.PropertyInfo;
 
 import java.util.Collection;
+import java.util.List;
 
 
 public interface TaxServiceDao {
@@ -14,9 +15,18 @@ public interface TaxServiceDao {
 
     Collection<PropertyInfo> getAllInfo();
 
-
     Bill saveTaxBillInfo(Bill taxBill);
-    Bill getTaxBillInfo(String certNo);
-    Collection<Bill> getAllTaxBillInfo();
+
+    List<Bill> getTaxBillInfo(String certNo);
+
+    List<Bill> getTaxBillInfo(String certNo, String year);
+
+    List<Bill> getTaxBillInfo(String certNo, String year, String month);
+
+    List<Bill> getTaxBillInfoByStatus(String certNo, String status);
+
+    int updateStatusOfTaxBill(String status, int billId);
+
+    Bill getTaxBillInfo(int billId);
 
 }
