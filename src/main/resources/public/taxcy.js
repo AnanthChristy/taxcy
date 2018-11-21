@@ -2,18 +2,21 @@ $(document).ready(function() {
     $('.next-link').on("click", function(){
         alert($('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val());
 
-        var address = {};
+        var name;
         var data = {};
+        var address = {};
 
-        address["street"] = "2711 N 1st St";
-        address["city"] = "San Jose";
-        address["state"] = "CA";
-        address["zipCode"] = 95134;
+        name = $('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val();
+
+        address["street"] = $('#street').val();
+        address["city"] = $('#city').val();
+        address["state"] = $('#state').val();
+        address["zipCode"] = $('#zipCode').val();
 
         data["propAdd"] = address;
-        data["ownerName"] = "Dr. Gregory O'Brien";
-        data["phoneNumber"] = "2384983488";
-        data["email"] = "info@itu.edu"
+        data["ownerName"] = name;
+        data["phoneNumber"] = $('#phoneNumber').val();
+        data["email"] = $('#email').val();
 
         $.ajax({
             type: "POST",
@@ -23,7 +26,7 @@ $(document).ready(function() {
             crossDomain: true,
             dataType: "json",
             success: function(data) {
-                alert("Certificate Number: " + data.certNo);
+                alert("Certificate Number: " + data.certNo + ', Name: ' + data.ownerName + ', Street: ' + data.propAdd.street + ', City: ' + data.propAdd.city + ', State: ' + data.propAdd.state + ', ZipCode: ' )+ data.propAdd.zipCode + ', Phone Number: ' + data.phoneNumber + ', Email: ' + data.email;
             },
             error: function(jqXHR, status) {
                 alert('Error! ' + status.code);
