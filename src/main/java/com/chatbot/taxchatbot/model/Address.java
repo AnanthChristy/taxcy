@@ -8,7 +8,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ADDRESS_ID")
+    @Column(name = "ADDRESS_ID", unique=true, nullable=false)
     private int id;
 
     @Column(name = "STREET")

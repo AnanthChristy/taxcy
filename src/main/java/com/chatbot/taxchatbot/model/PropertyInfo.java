@@ -2,8 +2,11 @@ package com.chatbot.taxchatbot.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "PROPERTY_INFO")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PropertyInfo {
 
     @Id
