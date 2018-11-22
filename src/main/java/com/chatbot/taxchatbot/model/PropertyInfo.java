@@ -16,7 +16,7 @@ public class PropertyInfo {
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ADDRESS_ID")
     private Address propAdd;
 
