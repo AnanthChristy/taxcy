@@ -1,7 +1,6 @@
-
 body {
     margin: 0px;
-    margin-top: 15px;
+    padding: 0px;
 }
 
 a {
@@ -11,86 +10,182 @@ a {
 
 header {
     margin: 0px;
+    padding: 0px;
     height: 100px;
+    display: flex;
+    flex-direction: row;
     background-color: #8585ad;
     border-top: 1px solid #47476b;
     border-bottom: 1px solid #47476b;
 }
 
-#page-title {
-    margin: 15px;
-    font-size: 30px;
-    color: #004d00;
-    margin-left: 160px;
-    font-weight: bold;
-    line-height: 2.3em;
+footer {
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    background-color: #8585ad;
 }
 
-#container {
-    height: 500px;
+#footer-content {
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 2.5em;
+    text-align: center;
+}
+
+#app-title-container {
+    width: 50%;
+    height: 100px;
+    background-color: #8585ad;
+}
+
+#app-certification-container {
+    width: 50%;
+    height: 100px;
+    background-color: #8585ad;
+}
+
+#app-title {
+    color: green;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#app-description {
+    font-size: 15px;
+    color: #4dff4d;
+    font-weight: normal;
+}
+
+#app-title-content {
+    text-align: left;
+    margin-left: 50px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#app-certification-content {
+    font-size: 13px;
+    text-align: right;
+    line-height: 6.5em;
+    margin-right: 50px;
+    font-weight: normal;
+}
+
+#body-background {
+    width: 100%;
+    height: 510px;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
     background-color: #e0e0eb;
 }
 
 #form-container {
-    width: 75%;
-    height: 320px;
-    margin: 15px;
+    width: 70%;
+    margin: auto;
+    height: 500px;
     display: flex;
-    margin-top: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 25px;
+    justify-content: center;
     background-color: #ffffff;
 }
 
-#form-header-container {
-    width: 100%;
-    height: 15px;
-    margin-top: 0px;
-    background-color: #006600;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+.step-header {
+    width: 90%;
+    height: 35px;
+    display: flex;
+    margin-top: 15px;
+    flex-direction: row;
 }
 
-#form-footer-container {
-    width: 100%;
-    height: 15px;
-    margin-top: 0px;
-    background-color: #006600;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+.step-footer {
+    width: 90%;
+    height: 35px;
+    margin-top: 5px;
+    text-align: right;
+    background-color: #ffffff;
 }
 
-#form-detail-container {
-    width: 100%;
-    height: 300px;
-    text-align: center;
-    /*background-color:blue;*/
+.current-step-number-container {
+    width: 50px;
+    height: 35px;
+    background-color: #202060;
 }
 
-.form-table {
-    width: 98%;
-    margin-left: 11px;
-}
-
-.button {
-    width: 120px;
-    height: 50px;
-    font-size: 13px;
-    color: #e6e6e6;
-    font-weight: bold;
-    line-height: 3.5em;
-    border-radius: 7px;
-    background-color: #006600; /*003300*/
-    transition: background 1s, color 1s;
-}
-
-.button:hover {
+.current-step-number {
+    margin: 5px;
+    padding: 0px;
+    font-size: 25px;
     color: #ffffff;
-    background-color: #009900;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.current-step-detail-container {
+    width: 94%;
+    margin: 0px;
+    padding: 0px;
+    height: 35px;
+    background-color: #f0f0f0;
+}
+
+.current-step-detail {
+    margin: 0px;
+    font-size: 15px;
+    margin-left: 5px;
+    line-height: 2.5em;
+    text-align: justify;
+}
+
+.step-container {
+    width: 90%;
+    height: 390px;
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: #ffffff;
+}
+
+.form-row {
+    width: 100%;
+    height: 65px;
+    border: 0px solid black;
+    background-color: #e0e0eb;
+}
+
+.form-row-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-column {
+    width: 33%;
+    height: 70px;
+    border: 0px solid black;
+}
+
+.label-title {
+    margin: 0px;
+    font-size: 13px;
+    color: #666699;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.label-detail {
+    margin: 0px;
+    margin-left: 15px;
+}
+
+.next-link {
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 15px;
 }
