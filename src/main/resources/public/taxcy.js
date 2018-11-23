@@ -1,9 +1,7 @@
 $(document).ready(function() {
-<<<<<<< HEAD
     if($('#page').val() == 'detail') {
         var param = window.location.search.substring(1);
         certNo = param.substring(8, param.length - 3)
-        $('#cno').text(certNo);
     } else if($('#page').val() == 'form') {
         var certNo = getCertNo();
     }
@@ -12,39 +10,20 @@ $(document).ready(function() {
         var data = {};
         var address = {};
 
-=======
-    $('.next-link').on("click", function(){
-        alert($('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val());
-
-        var name;
-        var data = {};
-        var address = {};
-
-        name = $('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val();
-
->>>>>>> origin/staging
         address["street"] = $('#street').val();
         address["city"] = $('#city').val();
         address["state"] = $('#state').val();
         address["zipCode"] = $('#zipCode').val();
 
         data["propAdd"] = address;
-<<<<<<< HEAD
         data["ownerName"] = $('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val();
         data["phoneNumber"] = $('#phoneNumber').val();
         data["email"] = $('#email').val();
 
-        /*
         var certNo = "50e1f1a3-e165-4bda-a291-35a024177c33";
         window.location.replace("detail.html?cert='" + certNo + "'");
-        */
 
-=======
-        data["ownerName"] = name;
-        data["phoneNumber"] = $('#phoneNumber').val();
-        data["email"] = $('#email').val();
-
->>>>>>> origin/staging
+        /*
         $.ajax({
             type: "POST",
             url: "https://taxcy.herokuapp.com/chatbot/propertyInfo",
@@ -52,21 +31,16 @@ $(document).ready(function() {
             contentType: "application/json; charset=utf-8",
             crossDomain: true,
             dataType: "json",
-<<<<<<< HEAD
             success: function(info) {
                 alert("Certificate Number: " + info.certNo + ', Name: ' + info.ownerName + ', Street: ' + info.propAdd.street + ', City: ' + info.propAdd.city + ', State: ' + info.propAdd.state + ', ZipCode: ' + info.propAdd.zipCode + ', Phone Number: ' + info.phoneNumber + ', Email: ' + info.email);
-                window.location.replace("detail.html?cert='" + info.certNo + "'");
-=======
-            success: function(data) {
-                alert("Certificate Number: " + data.certNo + ', Name: ' + data.ownerName + ', Street: ' + data.propAdd.street + ', City: ' + data.propAdd.city + ', State: ' + data.propAdd.state + ', ZipCode: ' )+ data.propAdd.zipCode + ', Phone Number: ' + data.phoneNumber + ', Email: ' + data.email;
->>>>>>> origin/staging
+                window.location.replace("detail.html");
             },
             error: function(jqXHR, status) {
                 alert('Error! ' + status.code);
             }
         });
+        */
     });
-<<<<<<< HEAD
 
     $('.submit-button').on("click", function(){
         var data = {};
@@ -90,12 +64,9 @@ $(document).ready(function() {
         data["exemption"] = exempt;
         data["penalties"] = $('#penalties').val();
 
-        /*
         alert("Bill ID: " + data.billId + ', Cert No: ' + data.certNo + ', Year: ' + data.year + ', Month: ' + data.month + ', Pay Date: ' + data.payDate + ', Gross Income: ' + data.grossIncome + ', Exemption Bill ID: ' + data.exemption.billId + ', Exempt PR: ' + data.exemption.exemptPR + ', Exempt Corp: ' + data.exemption.exemptCorp + ', Exempt Less: ' + data.exemption.exemptLess + ', Exempt Gov: ' + data.exemption.exemptGov + ', Total Exempt: ' + data.exemption.totalExempt + ', Taxable Income: ' + data.taxableIncome + ', Tax Due: ' + data.taxDue + ', Penalties: ' + data.penalties + ', Total Tax Due: ' + data.totalTaxDue);
-        */
 
-        window.location.replace("form.html?cert='" + certNo + "'");
-
+        /*
         $.ajax({
             type: "POST",
             url: "https://taxcy.herokuapp.com/chatbot/calculation",
@@ -110,6 +81,7 @@ $(document).ready(function() {
                 alert('Error! ' + status.code);
             }
         });
+        */
     });
 
     function getCertNo() {
@@ -146,6 +118,4 @@ $(document).ready(function() {
                 return "December";
         }
     }
-=======
->>>>>>> origin/staging
 });
