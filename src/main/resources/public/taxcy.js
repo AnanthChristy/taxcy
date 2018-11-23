@@ -1,7 +1,8 @@
 $(document).ready(function() {
+    //cert='T1564679'
     if($('#page').val() == 'detail') {
         var param = window.location.search.substring(1);
-        certNo = param.substring(8, param.length - 3)
+        certNo = param.substring(8, param.length - 3);
         $('#CertNumber').text(certNo);
     } else if($('#page').val() == 'form') {
         var certNo = getCertNo();
@@ -22,7 +23,7 @@ $(document).ready(function() {
         data["email"] = $('#email').val();
 
         /*
-        var certNo = "50e1f1a3-e165-4bda-a291-35a024177c33";
+        var certNo = "T1564679";
         window.location.replace("detail.html?cert='" + certNo + "'");
         */
 
