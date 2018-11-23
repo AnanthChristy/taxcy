@@ -20,10 +20,11 @@ $(document).ready(function() {
         data["phoneNumber"] = $('#phoneNumber').val();
         data["email"] = $('#email').val();
 
+        /*
         var certNo = "50e1f1a3-e165-4bda-a291-35a024177c33";
         window.location.replace("detail.html?cert='" + certNo + "'");
+        */
 
-        /*
         $.ajax({
             type: "POST",
             url: "https://taxcy.herokuapp.com/chatbot/propertyInfo",
@@ -33,13 +34,13 @@ $(document).ready(function() {
             dataType: "json",
             success: function(info) {
                 alert("Certificate Number: " + info.certNo + ', Name: ' + info.ownerName + ', Street: ' + info.propAdd.street + ', City: ' + info.propAdd.city + ', State: ' + info.propAdd.state + ', ZipCode: ' + info.propAdd.zipCode + ', Phone Number: ' + info.phoneNumber + ', Email: ' + info.email);
-                window.location.replace("detail.html");
+                
+                window.location.replace("detail.html?cert='" + info.certNo + "'");
             },
             error: function(jqXHR, status) {
                 alert('Error! ' + status.code);
             }
         });
-        */
     });
 
     $('.submit-button').on("click", function(){
@@ -66,6 +67,8 @@ $(document).ready(function() {
 
         alert("Bill ID: " + data.billId + ', Cert No: ' + data.certNo + ', Year: ' + data.year + ', Month: ' + data.month + ', Pay Date: ' + data.payDate + ', Gross Income: ' + data.grossIncome + ', Exemption Bill ID: ' + data.exemption.billId + ', Exempt PR: ' + data.exemption.exemptPR + ', Exempt Corp: ' + data.exemption.exemptCorp + ', Exempt Less: ' + data.exemption.exemptLess + ', Exempt Gov: ' + data.exemption.exemptGov + ', Total Exempt: ' + data.exemption.totalExempt + ', Taxable Income: ' + data.taxableIncome + ', Tax Due: ' + data.taxDue + ', Penalties: ' + data.penalties + ', Total Tax Due: ' + data.totalTaxDue);
 
+        window.location.replace("form.html?cert='" + data.certNo + "'");
+
         /*
         $.ajax({
             type: "POST",
@@ -76,6 +79,8 @@ $(document).ready(function() {
             dataType: "json",
             success: function(info) {
                 alert("Bill ID: " + info.billId + ', Cert No: ' + info.certNo + ', Year: ' + info.year + ', Month: ' + info.month + ', Pay Date: ' + info.payDate + ', Gross Income: ' + info.grossIncome + ', Exemption Bill ID: ' + info.exemption.billId + ', Exempt PR: ' + info.exemption.exemptPR + ', Exempt Corp: ' + info.exemption.exemptCorp + ', Exempt Less: ' + info.exemption.exemptLess + ', Exempt Gov: ' + info.exemption.exemptGov + ', Total Exempt: ' + info.exemption.totalExempt + ', Taxable Income: ' + info.taxableIncome + ', Tax Due: ' + info.taxDue + ', Penalties: ' + info.penalties + ', Total Tax Due: ' + info.totalTaxDue);
+
+                window.location.replace("form.html?cert='" + info.certNo + "'");
             },
             error: function(jqXHR, status) {
                 alert('Error! ' + status.code);
