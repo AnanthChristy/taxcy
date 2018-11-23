@@ -7,7 +7,9 @@ import com.chatbot.taxchatbot.model.PropertyInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -43,8 +45,15 @@ public class TaxServiceDaoImpl implements TaxServiceDao {
 
 
     private String generateUUID(){
-        UUID uuid = UUID.randomUUID();
-        return uuid.toString();
+    	ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i=1000000; i<2000000; i++) {
+            list.add(new Integer(i));
+        }
+        Collections.shuffle(list);
+        Integer uuid = list.get(0);
+        return "T"+uuid.toString();
+//        UUID uuid = UUID.randomUUID();
+//        return uuid.toString();
     }
 
     public Bill saveTaxBillInfo(Bill taxBill){

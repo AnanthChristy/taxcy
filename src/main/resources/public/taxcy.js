@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
     if($('#page').val() == 'detail') {
         var param = window.location.search.substring(1);
         certNo = param.substring(8, param.length - 3)
@@ -11,12 +12,24 @@ $(document).ready(function() {
         var data = {};
         var address = {};
 
+=======
+    $('.next-link').on("click", function(){
+        alert($('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val());
+
+        var name;
+        var data = {};
+        var address = {};
+
+        name = $('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val();
+
+>>>>>>> origin/staging
         address["street"] = $('#street').val();
         address["city"] = $('#city').val();
         address["state"] = $('#state').val();
         address["zipCode"] = $('#zipCode').val();
 
         data["propAdd"] = address;
+<<<<<<< HEAD
         data["ownerName"] = $('#title').val() + '. ' + $('#firstname').val() + ' ' + $('#middle-initial').val() + '. ' + $('#lastname').val();
         data["phoneNumber"] = $('#phoneNumber').val();
         data["email"] = $('#email').val();
@@ -26,6 +39,12 @@ $(document).ready(function() {
         window.location.replace("detail.html?cert='" + certNo + "'");
         */
 
+=======
+        data["ownerName"] = name;
+        data["phoneNumber"] = $('#phoneNumber').val();
+        data["email"] = $('#email').val();
+
+>>>>>>> origin/staging
         $.ajax({
             type: "POST",
             url: "https://taxcy.herokuapp.com/chatbot/propertyInfo",
@@ -33,15 +52,21 @@ $(document).ready(function() {
             contentType: "application/json; charset=utf-8",
             crossDomain: true,
             dataType: "json",
+<<<<<<< HEAD
             success: function(info) {
                 alert("Certificate Number: " + info.certNo + ', Name: ' + info.ownerName + ', Street: ' + info.propAdd.street + ', City: ' + info.propAdd.city + ', State: ' + info.propAdd.state + ', ZipCode: ' + info.propAdd.zipCode + ', Phone Number: ' + info.phoneNumber + ', Email: ' + info.email);
                 window.location.replace("detail.html?cert='" + info.certNo + "'");
+=======
+            success: function(data) {
+                alert("Certificate Number: " + data.certNo + ', Name: ' + data.ownerName + ', Street: ' + data.propAdd.street + ', City: ' + data.propAdd.city + ', State: ' + data.propAdd.state + ', ZipCode: ' )+ data.propAdd.zipCode + ', Phone Number: ' + data.phoneNumber + ', Email: ' + data.email;
+>>>>>>> origin/staging
             },
             error: function(jqXHR, status) {
                 alert('Error! ' + status.code);
             }
         });
     });
+<<<<<<< HEAD
 
     $('.submit-button').on("click", function(){
         var data = {};
@@ -121,4 +146,6 @@ $(document).ready(function() {
                 return "December";
         }
     }
+=======
+>>>>>>> origin/staging
 });

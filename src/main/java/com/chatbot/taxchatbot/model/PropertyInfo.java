@@ -2,8 +2,11 @@ package com.chatbot.taxchatbot.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "PROPERTY_INFO")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PropertyInfo {
 
     @Id
@@ -16,7 +19,7 @@ public class PropertyInfo {
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ADDRESS_ID")
     private Address propAdd;
 
