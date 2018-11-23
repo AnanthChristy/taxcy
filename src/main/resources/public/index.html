@@ -3,144 +3,102 @@
     <head>
         <meta charset="UTF-8">
         <title>Taxcy</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="taxcy.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <header>
-            <div id="page-title">TAXCY</div>
+            <section id="app-title-container">
+                <p id="app-title-content">
+                    <span id="app-title">TAXCY</span><br>
+                    <span id="app-description">Your property tax assistant</span>
+                </p>
+            </section>
+            <section id="app-certification-container">
+                <p id="app-certification-content">
+                    Already have a certificate number?  Click 
+                    <a href="#">here</a>
+                </p>
+            </section>
         </header>
-        <section>
-            <div id="container">
-                <div id="form-container">
-                    <div id="form-header-container"></div>
-                    <div id="form-detail-container">
-                        <table id="form-table-owner-detail" class="form-table" border="0">
-                            <tr>
-                                <td style="width:100%;text-align:left;border-bottom:1px solid black" colspan="4">
-                                    <table border="0">
-                                        <tr>
-                                            <td>
-                                                <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Owner Name</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input style="width:400px;margin-left:15px;margin-bottom:1px" type="text" name="ownerName" value="John Doe">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left;width:50%;border-bottom:1px solid black;border-right:1px solid black">
-                                    <table border="0">
-                                        <tr>
-                                            <td>
-                                                <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Phone Number</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input style="width:150px;margin-left:15px" type="text" name="ownerName" value="1234567890">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td style="text-align:left;width:50%;border-bottom:1px solid black" colspan="3">
-                                    <table border="0">
-                                        <tr>
-                                            <td>
-                                                <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Email Address</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input style="width:300px;margin-left:15px" type="email" name="ownerName" value="doejohn1234@students.itu.edu">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border-bottom:1px solid black; border-right:1px solid black">
-                                    <table border="0">
-                                        <tr>
-                                            <td style="text-align:left">
-                                                <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Street Address</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input style="width:400px;margin-left:15px" type="email" name="ownerName" value="2711 N 1st">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td style="border-bottom:1px solid black; border-right:1px solid black">
-                                    <table border="0">
-                                        <tr>
-                                            <td style="text-align:left">
-                                                <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">City</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">
-                                                <input style="width:200px;margin-left:15px" type="email" name="ownerName" value="San Jose">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td style="border-right:1px solid black;border-bottom:1px solid black;">
-                                    <table border="0">
-                                        <tr>
-                                            <td style="text-align:left">
-                                                <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">State</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">
-                                                <input style="width:30px;margin-left:15px" type="email" name="ownerName" value="CA">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td style="border-bottom:1px solid black">
-                                    <table border="0">
-                                        <tr>
-                                            <td style="text-align:left">
-                                                <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Zip Code</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align:left">
-                                                <input style="width:50px;margin-left:15px" type="email" name="ownerName" value="95134">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                        <div style="display:flex;flex-direction:row;justify-content:center;width:100%">
-                            <div style="width:17%;margin-top: 15px">
-                                <a href="#">
-                                    <div style="height:50px;font-size:13px;margin:5px;color:#ffffff;font-weight:bold;line-height:3.7em;border:3px ridge black;border-radius: 50px; background-color:#006600">CLEAR ENTRIES</div>
-                                </a>
-                            </div>
-                            <div style="width:17%;margin-top: 15px">
-                                <a href="detail.html">
-                                    <div style="height:50px;font-size:13px;margin:5px;color:#ffffff;font-weight:bold;line-height:3.7em;border:3px ridge black;border-radius: 50px; background-color:#006600">NEXT</div>
-                                </a>
-                            </div>
+        <section id="body-background">
+            <div id="form-container">
+                <div class="step-header">
+                    <div class="current-step-number-container">
+                        <p class="current-step-number">1</p>
+                    </div>
+                    <div class="current-step-detail-container">
+                        <p class="current-step-detail">User and Contact Information</p>
+                    </div>
+                </div>
+                <div class="step-container">
+                    <div class="form-row">
+                        <p class="label-title">Title</p>
+                        <select class="label-detail" id="title">
+                            <option>Dr</option>
+                            <option>Mr</option>
+                            <option>Ms</option>
+                            <option>Mrs</option>
+                            <option>Rev</option>
+                        </select>
+                    </div>
+                    <div class="form-row form-row-flex">
+                        <div class="form-column">
+                            <p class="label-title">First Name</p>
+                            <input type="text" class="label-detail" id="firstname">
+                        </div>
+                        <div class="form-column" style="width:17%">
+                            <p class="label-title">Middle Initial</p>
+                            <input type="text" class="label-detail" id="middle-initial" style="width:50px">
+                        </div>
+                        <div class="form-column">
+                            <p class="label-title">Last Name</p>
+                            <input type="text" class="label-detail" id="lastname">
                         </div>
                     </div>
-                    <div id="form-footer-container"></div>
+                    <div class="form-row">
+                        <p class="label-title">Phone Number</p>
+                        <input type="text" class="label-detail" id="phoneNumber">
+                    </div>
+                    <div class="form-row">
+                        <p class="label-title">Email Address</p>
+                        <input type="text" class="label-detail" id="email">
+                    </div>
+                    <div class="form-row">
+                        <p class="label-title">Street Address</p>
+                        <input type="text" class="label-detail" id="street">
+                    </div>
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:23%">
+                            <p class="label-title">City</p>
+                            <input type="text" class="label-detail" value="" style="width:137px" id="city">
+                        </div>
+                        <div class="form-column" style="width:10%">
+                            <p class="label-title">State</p>
+                            <input type="text" class="label-detail" value="" style="width:30%" id="state">
+                        </div>
+                        <div class="form-column">
+                            <p class="label-title">Zip Code</p>
+                            <input type="text" class="label-detail" value="" style="width:20%" id="zipCode">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form-row">Test</div> -->
+                <div class="step-footer">
+                    <div align="right">
+                        <a href="javascript:void(0)" class="next-link" >
+                            <div style="width:75px;height:30px;line-height:2.5em;border-radius:5px;background-color:blue">
+                                <span style="margin:10px;color:white">Next >></span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
+        <input type="hidden" value="index" id="page">
         <footer>
-            Copyright &copy 2018 Taxcy
+            <p id="footer-content">Copyright &copy 2018 Taxcy</p>
         </footer>
     </body>
 </html>

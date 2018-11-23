@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Taxcy</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="taxcy.js"></script>
+        <link rel="stylesheet" type="text/css" href="form-style.css">
+    </head>
+    <body>
+        <header>
+            <section id="app-title-container">
+                <p id="app-title-content">
+                    <span id="app-title">TAXCY</span><br>
+                    <span id="app-description">Your property tax assistant</span>
+                </p>
+            </section>
+            <section id="app-certification-container">
+                <p id="app-certification-content">
+                    Already have a certificate number?  Click 
+                    <a href="#">here</a>
+                </p>
+            </section>
+        </header>
+        <section id="body-background">
+            <div id="form-container">
+                <div class="step-container">
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:50%">
+                            <p class="label-label label-title">Name</p>
+                            <p class="label-label label-detail">Dr. Gregory O'Brien</p>
+                        </div>
+                        <div class="form-column" style="width:50%">
+                            <p class="label-label label-title">Certification Number</p>
+                            <p class="label-label label-detail">50e1f1a3-e165-4bda-a291-35a024177c33</p>
+                        </div>
+                    </div>
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:25%">
+                            <p class="label-label label-title">Phone Number</p>
+                            <p class="label-label label-detail">2384983488</p>
+                        </div>
+                        <div class="form-column" style="width:75%">
+                            <p class="label-label label-title">Email</p>
+                            <p class="label-label label-detail">info@itu.edu</p>
+                        </div>
+                    </div>
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:60%">
+                            <p class="label-label label-title">Street</p>
+                            <p class="label-label label-detail">2711 N 1st St</p>
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-label label-title">City</p>
+                            <p class="label-label label-detail">San Jose</p>
+                        </div>
+                        <div class="form-column" style="width:10%">
+                            <p class="label-label label-title">State</p>
+                            <p class="label-label label-detail">CA</p>
+                        </div>
+                        <div class="form-column" style="width:15%">
+                            <p class="label-label label-title">Zip Code</p>
+                            <p class="label-label label-detail">95134</p>
+                        </div>
+                    </div>
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:10%">
+                            <p class="label-label label-title">Bill ID</p>
+                            <p class="label-label label-detail">2</p>
+                        </div>
+                        <div class="form-column" style="width:10%">
+                            <p class="label-label label-title">Year</p>
+                            <p class="label-label label-detail">2018</p>
+                        </div>
+                        <div class="form-column" style="width:10%">
+                            <p class="label-label label-title">Month</p>
+                            <p class="label-label label-detail">MAY</p>
+                        </div>
+                        <div class="form-column" style="width:70%">
+                            <p class="label-label label-title">Pay Date</p>
+                            <p class="label-label label-detail">2018-12-27T00:00:00.000+0000</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row">
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Gross Income</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Exempt PR</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row">
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Taxable Income</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Exempt Corp</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row">
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Tax Due</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Exempt Less</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row">
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Penalties</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Exempt Gov</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row">
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Total Tax Due</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                        <div class="form-element-container">
+                            <p class="label-label label-title">Total Exempt</p>
+                            <p class="label-label label-detail">210000</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form-row">Test</div> -->
+            </div>
+        </section>
+        <input type="hidden" value="form" id="page">
+        <footer>
+            <p id="footer-content">Copyright &copy 2018 Taxcy</p>
+        </footer>
+    </body>
+</html>

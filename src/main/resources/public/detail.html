@@ -3,268 +3,130 @@
     <head>
         <meta charset="UTF-8">
         <title>Taxcy</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="taxcy.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <header>
-            <div id="page-title">TAXCY</div>
+            <section id="app-title-container">
+                <p id="app-title-content">
+                    <span id="app-title">TAXCY</span><br>
+                    <span id="app-description">Your property tax assistant</span>
+                </p>
+            </section>
+            <section id="app-certification-container">
+                <p id="app-certification-content">
+                    Already have a certificate number?  Click 
+                    <a href="#">here</a>
+                </p>
+            </section>
         </header>
-        <section>
-            <div id="container">
-                <div id="form-container">
-                    <div id="form-header-container"></div>
-                    <div id="form-detail-container">
-                        <table id="form-table-owner-detail" class="form-table" border="0">
-                            <tr>
-                                <td style="text-align:left;width:55%;border-bottom:1px solid black">
-                                    <table width="100%" border="0">
-                                        <tr>
-                                            <td style="width:17%;text-align:left;border-right:1px solid black">
-                                                <table width="100%" border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Tax Filing</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:40%;text-align:left">
-                                                            <select style="margin-left:15px">
-                                                                <option value="january">January</option>
-                                                                <option value="february">February</option>
-                                                                <option value="november">November</option>
-                                                            </select>
-                                                            <input style="width:35px;margin-left:1px;margin-bottom:1px" type="text" name="ownerName" value="2018">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:15%;text-align:left;border-right:1px solid black">
-                                                <table width="100%" border="0">
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Pay Date</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <input style="margin-left:15px;width:110px" type="date">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:15.5%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Bill ID</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <input style="width:50px;margin-left:15px;margin-bottom:1px" type="text" name="ownerName" value="24355">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:29.5%;text-align:left">
-                                                <table width="100%" border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Cert Number</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#333399;font-size:15px;font-weight:normal;margin-left:15px;">
-                                                                50e1f1a3-e165-4bda-a291-35a024177c33
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:left;width:55%;border-bottom:1px solid black">
-                                    <table width="100%" border="0">
-                                        <tr>
-                                            <td style="width:22.3%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Gross Income</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:40%;text-align:left">
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="210000.0">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Taxable Income</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="0.0">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Tax Due</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="0.0">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Penalties</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="0.0">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Total Tax Due</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="0.0">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:left;width:55%;border-bottom:1px solid black">
-                                    <table width="100%" border="0">
-                                        <tr>
-                                            <td style="width:22.3%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Exempt PR</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:40%;text-align:left">
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="22.56">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Exempt Corp</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="12.56">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Exempt Less</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%;text-align:left">
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="123.45">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left;border-right:1px solid black">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Exempt Gov</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="54.83">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td style="width:20%;text-align:left">
-                                                <table border="0">
-                                                    <tr>
-                                                        <td>
-                                                            <label style="color:#666699;font-size:11px;font-weight:bold;margin-left:15px;" for="ownerName">Total Exempt</label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input style="width:130px;margin-left:15px" type="text" name="ownerName" value="0.0">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                        <div style="display:flex;flex-direction:row;justify-content:center;width:100%">
-                            <div style="width:17%;margin-top: 15px">
-                                <a href="#">
-                                    <div style="height:50px;font-size:13px;margin:5px;color:#ffffff;font-weight:bold;line-height:3.7em;border:3px ridge black;border-radius: 50px; background-color:#006600">CLEAR ENTRIES</div>
-                                </a>
-                            </div>
-                            <div style="width:17%;margin-top: 15px">
-                                <a href="detail.html">
-                                    <div style="height:50px;font-size:13px;margin:5px;color:#ffffff;font-weight:bold;line-height:3.7em;border:3px ridge black;border-radius: 50px; background-color:#006600">SUBMIT</div>
-                                </a>
-                            </div>
+        <section id="body-background">
+            <div id="form-container">
+                <div class="step-header">
+                    <div class="current-step-number-container">
+                        <p class="current-step-number">2</p>
+                    </div>
+                    <div class="current-step-detail-container">
+                        <p class="current-step-detail">Taxable income, exemption, tax due</p>
+                    </div>
+                </div>
+                <div class="step-container-small">
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:25%">
+                            <p class="label-title">Tax Filing</p>
+                            <select class="label-detail" id="tax-filing">
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <input type="text" id="tax-year" style="width:35px" value="2018">
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-title">Pay Date</p>
+                            <input type="date" class="label-detail" id="pay-date" style="width:120px">
+                        </div>
+                        <div class="form-column" style="width:12%">
+                            <p class="label-title">Bill ID</p>
+                            <input type="text" class="label-detail" id="bill-id" value="" style="width:50px">
+                        </div>
+                        <div class="form-column" style="width:45%">
+                            <p class="label-title">Certification Number</p>
+                            <p class="label-title">
+                                <span id="cno"></span>
+                            </p>
                         </div>
                     </div>
-                    <div id="form-footer-container"></div>
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:25%">
+                            <p class="label-title">Gross Income</p>
+                            <input type="text" class="label-detail" id="gross-income" value="" style="width:70px">
+                        </div>
+                        <div class="form-column" style="width:27%">
+                            <p class="label-title">Taxable Income</p>
+                            <input type="text" class="label-detail" id="taxable-income" style="width:50px" value="">
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-title">Tax Due</p>
+                            <input type="text" class="label-detail" id="tax-due" value="" style="width:50px">
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-title">Penalties</p>
+                            <input type="text" class="label-detail" id="penalties" value="" style="width:50px">
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-title">Total Tax Due</p>
+                            <input type="text" class="label-detail" id="total-tax-due" value="" style="width:50px">
+                        </div>
+                    </div>
+                    <div class="form-row form-row-flex">
+                        <div class="form-column" style="width:25%">
+                            <p class="label-title">Exempt PR</p>
+                            <input type="text" class="label-detail" id="exempt-pr" value="" style="width:70px">
+                        </div>
+                        <div class="form-column" style="width:27%">
+                            <p class="label-title">Exempt Corp</p>
+                            <input type="text" class="label-detail" id="exempt-corp" style="width:50px" value="">
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-title">Exempt Less</p>
+                            <input type="text" class="label-detail" id="exempt-less" value="" style="width:50px">
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-title">Exempt Gov</p>
+                            <input type="text" class="label-detail" id="exempt-gov" value="" style="width:50px">
+                        </div>
+                        <div class="form-column" style="width:20%">
+                            <p class="label-title">Total Exempt</p>
+                            <input type="text" class="label-detail" id="total-exempt" value="" style="width:50px">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form-row">Test</div> -->
+                <div class="step-footer">
+                    <div align="right">
+                        <a href="javascript:void(0)" class="submit-button" >
+                            <div style="width:75px;height:30px;line-height:2.5em;border-radius:5px;background-color:blue">
+                                <span style="margin:10px;color:white">Submit</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
+        <input type="hidden" value="detail" id="page">
         <footer>
-            Copyright &copy 2018 Taxcy
+            <p id="footer-content">Copyright &copy 2018 Taxcy</p>
         </footer>
     </body>
 </html>
