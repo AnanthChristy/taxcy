@@ -1,3 +1,5 @@
+//https://taxcy.herokuapp.com/chatbot/getInfo/T1750254
+
 $(document).ready(function() {
     //cert='T1564679'
     if($('#page').val() == 'detail') {
@@ -35,7 +37,9 @@ $(document).ready(function() {
             crossDomain: true,
             dataType: "json",
             success: function(info) {
+                /*
                 alert("Certificate Number: " + info.certNo + ', Name: ' + info.ownerName + ', Street: ' + info.propAdd.street + ', City: ' + info.propAdd.city + ', State: ' + info.propAdd.state + ', ZipCode: ' + info.propAdd.zipCode + ', Phone Number: ' + info.phoneNumber + ', Email: ' + info.email);
+                */
 
                 window.location.replace("detail.html?cert='" + info.certNo + "'");
             },
@@ -80,7 +84,9 @@ $(document).ready(function() {
             crossDomain: true,
             dataType: "json",
             success: function(info) {
+                /*
                 alert("Bill ID: " + info.billId + ', Cert No: ' + info.certNo + ', Year: ' + info.year + ', Month: ' + info.month + ', Pay Date: ' + info.payDate + ', Gross Income: ' + info.grossIncome + ', Exemption Bill ID: ' + info.exemption.billId + ', Exempt PR: ' + info.exemption.exemptPR + ', Exempt Corp: ' + info.exemption.exemptCorp + ', Exempt Less: ' + info.exemption.exemptLess + ', Exempt Gov: ' + info.exemption.exemptGov + ', Total Exempt: ' + info.exemption.totalExempt + ', Taxable Income: ' + info.taxableIncome + ', Tax Due: ' + info.taxDue + ', Penalties: ' + info.penalties + ', Total Tax Due: ' + info.totalTaxDue);
+                */
 
                 window.location.replace("form.html?cert='" + info.certNo + "'");
             },
