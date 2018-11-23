@@ -177,7 +177,7 @@ footer {
 .form-column {
     width: 33%;
     height: 70px;
-    border: 1px solid black;
+    border: 0px solid black;
 }
 
 .label-title {
