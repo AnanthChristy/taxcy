@@ -48,6 +48,11 @@ $(document).ready(function() {
             );
             */
 
+            $.post("https://taxcy.herokuapp.com/chatbot/propertyInfo", clnt_data, function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+
+            /*
             $.ajax({
                 type: "POST",
                 url: "https://taxcy.herokuapp.com/chatbot/propertyInfo",
@@ -75,6 +80,7 @@ $(document).ready(function() {
                     );
                 }
             });
+            */
         }
     });
 
