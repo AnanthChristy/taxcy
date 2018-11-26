@@ -1,25 +1,9 @@
 $(document).ready(function() {
-    var clnt_tax = {};
-    var clnt_data = {};
+    var param = window.location.search.substring(1);
+    var certNo = param.substring(5, param.length);
 
-    clnt_data = testDataPersonal();
-    clnt_tax = testDataTax();
-
-    getPersonalInfo();
-
-    $('#taxFilingYear').text(clnt_tax.year);
-    $('#taxFilingMonth').text(clnt_tax.month);
-    $('#payDate').text(format_date(clnt_tax.payDate));
-    $('#grossIncome').text(format_figures(clnt_tax.grossIncome));
-    $('#exemptPR').text(format_figures(clnt_tax.exemption.exemptPR));
-    $('#taxableIncome').text(format_figures(clnt_tax.taxableIncome));
-    $('#exemptCorp').text(format_figures(clnt_tax.exemption.exemptCorp));
-    $('#taxDue').text(format_figures(clnt_tax.taxDue));
-    $('#exemptLess').text(format_figures(clnt_tax.exemption.exemptLess));
-    $('#penalties').text(format_figures(clnt_tax.penalties));
-    $('#exemptGov').text(format_figures(clnt_tax.exemption.exemptGov));
-    $('#totalTaxDue').text(format_figures(clnt_tax.totalTaxDue));
-    $('#totalExempt').text(format_figures(clnt_tax.exemption.totalExempt));
+    getPersonalInfo(certNo);
+    getTaxInfo(certNo);
 
     $('#certification-number-button').on("click", function() {
         var crtNum = $('#crtNum').val();
@@ -28,15 +12,11 @@ $(document).ready(function() {
         }
     });
 
-
-    function getPersonalInfo() {
+    function getPersonalInfo(certificationNumber) {
         //https://taxcy.herokuapp.com/chatbot/getInfo/T1750254
-        var param = window.location.search.substring(1);
-        var certNo = param.substring(5, param.length);
-
         $.ajax({
             type: "GET",
-            url: "https://taxcy.herokuapp.com/chatbot/getInfo/" + certNo,
+            url: "https://taxcy.herokuapp.com/chatbot/getInfo/" + certificationNumber,
             timeout: 300000,
             contentType: "application/json;charset=UTF-8",
             success: function(info) {
@@ -63,7 +43,34 @@ $(document).ready(function() {
                 console.log("TaxReport: Error communicating with API (chatbot/getInfo)");
             }
         });
+    }
 
+    function getTaxInfo(certificationNumber) {
+        //https://taxcy.herokuapp.com/chatbot/getTaxBillInfo/T1995405
+        $.ajax({
+            type: "GET",
+            url: "https://taxcy.herokuapp.com/chatbot/getTaxBillInfo/" + certificationNumber,
+            timeout: 300000,
+            contentType: "application/json;charset=UTF-8",
+            success: function(info) {
+                $('#taxFilingYear').text(info.year);
+                $('#taxFilingMonth').text(info.month);
+                $('#payDate').text(format_date(info.payDate));
+                $('#grossIncome').text(format_figures(info.grossIncome));
+                $('#exemptPR').text(format_figures(info.exemption.exemptPR));
+                $('#taxableIncome').text(format_figures(info.taxableIncome));
+                $('#exemptCorp').text(format_figures(info.exemption.exemptCorp));
+                $('#taxDue').text(format_figures(info.taxDue));
+                $('#exemptLess').text(format_figures(info.exemption.exemptLess));
+                $('#penalties').text(format_figures(info.penalties));
+                $('#exemptGov').text(format_figures(info.exemption.exemptGov));
+                $('#totalTaxDue').text(format_figures(info.totalTaxDue));
+                $('#totalExempt').text(format_figures(info.exemption.totalExempt));
+            },
+            error: function() {
+                console.log("TaxReport: Error communicating with API (chatbot/getTaxBillInfo)");
+            }
+        });
     }
 
     function format_date(date_value) {
@@ -78,49 +85,5 @@ $(document).ready(function() {
         num_lvl[0] = num_lvl[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         formatted = "$ " + num_lvl.join(".");
         return formatted;
-
-    }
-
-    function testDataPersonal() {
-        var clnt_data = {};
-        var clnt_address = {};
-
-        clnt_address["street"] = "2711 N 1st St";
-        clnt_address["city"] = "San Jose";
-        clnt_address["state"] = "CA";
-        clnt_address["zipCode"] = 95134;
-    
-        clnt_data["propAdd"] = clnt_address;
-        clnt_data["ownerName"] = "Dr. Gregory O'Brien";
-        clnt_data["phoneNumber"] = "2384983488";
-        clnt_data["email"] = "info@itu.edu";
-
-        return clnt_data;
-    }
-
-    function testDataTax() {
-        var clnt_tax = {};
-        var clnt_exempt = {};
-
-        clnt_exempt["exemptPR"] = 20.56;
-        clnt_exempt["exemptCorp"] = 12.56;
-        clnt_exempt["exemptLess"] = 123.45;
-        clnt_exempt["exemptGov"] = 54.83;
-        clnt_exempt["totalExempt"] = 211.39999999999998;
-
-        clnt_tax["billId"] = 2;
-        clnt_tax["certNo"] = "T1750254";
-        clnt_tax["year"] = "2018";
-        clnt_tax["month"] = "MAY";
-        clnt_tax["payDate"] = "2018-12-27T00:00:00.000+0000";
-        clnt_tax["grossIncome"] = 210000;
-        clnt_tax["exemption"] = clnt_exempt;
-        clnt_tax["taxableIncome"] = 209788.6;
-        clnt_tax["taxDue"] = 207690.714;
-        clnt_tax["penalties"] = 0;
-        clnt_tax["totalTaxDue"] = 0;
-        clnt_tax["status"] = "In Progress";
-
-        return clnt_tax;
     }
 });
