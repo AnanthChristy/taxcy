@@ -39,6 +39,16 @@ $(document).ready(function() {
             timeout: 300000,
             contentType: "application/json;charset=UTF-8",
             success: function(info) {
+                console.log("TaxReport: Success!");
+                console.log("Certification Number: " + info.certNo);
+                console.log("Owner Name: " + info.ownerName);
+                console.log("Phone Number: " + info.phoneNumber);
+                console.log("Email: " + info.email);
+                console.log("Street: " + info.propAdd.street);
+                console.log("City: " + info.propAdd.city);
+                console.log("State: " + info.propAdd.state);
+                console.log("Zip Code: " + info.propAdd.zipCode);
+                
                 $('#certNumber').text(info.certNo);
                 $('#ownerName').text(info.ownerName);
                 $('#phoneNumber').text(info.phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'));
