@@ -53,6 +53,21 @@ $(document).ready(function() {
             timeout: 300000,
             contentType: "application/json;charset=UTF-8",
             success: function(info) {
+                console.log("Success");
+                console.log("Year: " + info.year);
+                console.log("Month: " + info.month);
+                console.log("Pay Date: " + info.payDate);
+                console.log("Gross Income: " + info.grossIncome);
+                console.log("Taxable Income: " + info.taxableIncome);
+                console.log("Tax Due: " + info.taxDue);
+                console.log("Penalties: " + info.penalties);
+                console.log("Total Tax Due: " + info.totalTaxDue);
+                console.log("Exempt PR: " + info.exemption.exemptPR);
+                console.log("Exempt Corp: " + info.exemption.exemptCorp);
+                console.log("Exempt Less: " + info.exemption.exemptLess);
+                console.log("Exempt Gov: " + info.exemption.exemptGov);
+                console.log("Total Exempt: " + info.exemption.totalExempt);
+
                 $('#taxFilingYear').text(info.year);
                 $('#taxFilingMonth').text(info.month);
                 $('#payDate').text(format_date(info.payDate));
