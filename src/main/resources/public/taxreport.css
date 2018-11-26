@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+#page-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-title-container {
+    width: 70%;
+    height: 100px;
+    background-color: #004d00;
+}
+
+#page-cert-container {
+    width: 30%;
+    height: 100px;
+    background-color: #004d00; /*#8585ad*/
+    border: 0px solid black;
+}
+
+#certification-number-content {
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 3em;
+    margin-left: 70px;
+    margin-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.certification-number-object {
+    width: 70px;
+    margin: 0px;
+}
+
+#certification-number-object-table {
+    width: 50%;
+    margin-top: 0px;
+    margin-left: 70px;
+}
+
+.outer-button {
+    line-height: 1.4em;
+    text-align: center;
+}
+
+.button {
+    color: #ffffff;
+    border: 3px ridge #3d3d5c;
+    background-color: #006600; /*#47476b*/
+}
+
+#certification-number-button {
+    width: 70px;
+    height: 23px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#page-title {
+    font-size: 37px;
+    color: #80ff80;
+    margin-top: 20px;
+    margin-left: 50px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#page-title-content {
+    font-size: 15px;
+    margin-top: 3px;
+    color: #4dff4d;
+    margin-left: 55px;
+    font-weight: normal;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#page-footer {
+    margin: 0px;
+    height: 30px;
+    text-align: center;
+    background-color: #004d00;
+}
+
+#page-footer-content {
+    margin: 0px;
+    font-size: 13px;
+    color: #4dff4d;
+    line-height: 2.3em;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#form-background {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ccffcc;
+}
+
+.form-container {
+    width: 70%;
+    margin: 15px;
+    height: 637px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    background-color: #f0f0f0;
+}
+
+.row-flex-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cell-container {
+    width: 50%;
+    height: 70px;
+}
+
+.container-border-right {
+    border-right: 1px solid black;
+}
+
+.container-border-top {
+    border-top: 1px solid black;
+}
+
+.label-label {
+    margin: 15px;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.label-detail {
+    margin: 15px;
+    margin-top: 5px;
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+}

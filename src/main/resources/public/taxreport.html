@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Taxcy</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="taxreport.js"></script>
+        <link rel="stylesheet" type="text/css" href="taxreport.css">
+    </head>
+    <body>
+        <header>
+            <div id="page-header">
+                <div id="page-title-container">
+                    <p id="page-title">Taxcy</p>
+                    <p id="page-title-content">Your property tax assistant</p>
+                </div>
+                <div id="page-cert-container">
+                    <p id="certification-number-content">
+                        Already have a certification number?
+                    </p>
+                    <table border="0" id="certification-number-object-table">
+                        <tr>
+                            <td style="text-align:center">
+                                <input class="certification-number-object" type="text" id="crtNum" value="">
+                            </td>
+                            <td>
+                                <div class="outer-button">
+                                    <a href="javascript:void(0)">
+                                        <div class="button" id="certification-number-button">Submit</div>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </header>
+        <div id="form-background">
+            <!-- BEGIN FILLED-UP FORM -->
+            <div class="form-container">
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right">
+                        <p class="label-label">Owner Name</p>
+                        <p class="label-detail" id="ownerName">Dr. Gregory O'Brien</p>
+                    </div>
+                    <div class="cell-container container-border-right">
+                        <p class="label-label">Certification Number</p>
+                        <p class="label-detail" id="certNumber"></p>
+                    </div>
+                    <div class="cell-container">
+                        <p class="label-label">Phone Number</p>
+                        <p class="label-detail" id="phoneNumber"></p>
+                    </div>
+                </div>
+
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">Email Address</p>
+                        <p class="label-detail" id="email"></p>
+                    </div>
+                    <div class="cell-container container-border-top">
+                        <p class="label-label">Street</p>
+                        <p class="label-detail" id="street"></p>
+                    </div>
+                </div>
+
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">City</p>
+                        <p class="label-detail" id="city"></p>
+                    </div>
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">State</p>
+                        <p class="label-detail" id="state"></p>
+                    </div>
+                    <div class="cell-container container-border-top">
+                        <p class="label-label">Zip Code</p>
+                        <p class="label-detail" id="zipCode"></p>
+                    </div>
+                </div>
+
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">Year</p>
+                        <p class="label-detail" id='taxFilingYear'></p>
+                    </div>
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">Month</p>
+                        <p class="label-detail" id='taxFilingMonth'></p>
+                    </div>
+                    <div class="cell-container container-border-top">
+                        <p class="label-label">Pay Date</p>
+                        <p class="label-detail" id="payDate"></p>
+                    </div>
+                    
+                </div>
+
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">Gross Income</p>
+                        <p class="label-detail" id="grossIncome"></p>
+                    </div>
+                    <div class="cell-container container-border-top">
+                        <p class="label-label">Exempt PR</p>
+                        <p class="label-detail" id="exemptPR"></p>
+                    </div>
+                </div>
+
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">Taxable Income</p>
+                        <p class="label-detail" id="taxableIncome"></p>
+                    </div>
+                    <div class="cell-container container-border-top">
+                        <p class="label-label">Exempt Corp</p>
+                        <p class="label-detail" id="exemptCorp"></p>
+                    </div>
+                </div>
+
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">Tax Due</p>
+                        <p class="label-detail" id="taxDue"></p>
+                    </div>
+                    <div class="cell-container container-border-top">
+                        <p class="label-label">Exempt Less</p>
+                        <p class="label-detail" id="exemptLess"></p>
+                    </div>
+                </div>
+
+                <div class="row-flex-container">
+                    <div class="cell-container container-border-right container-border-top">
+                        <p class="label-label">Penalties</p>
+                        <p class="label-detail" id="penalties"></p>
+                    </div>
+                    <div class="cell-container container-border-top">
+                        <p class="label-label">Exempt Gov</p>
+                        <p class="label-detail" id="exemptGov"></p>
+                    </div>
+                </div>
+
+                <div class="row-flex-container">
+                        <div class="cell-container container-border-right container-border-top">
+                            <p class="label-label">Total Tax Due</p>
+                            <p class="label-detail" id="totalTaxDue"></p>
+                        </div>
+                        <div class="cell-container container-border-top">
+                            <p class="label-label">Total Exempt</p>
+                            <p class="label-detail" id="totalExempt"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END FILLED-UP FORM -->
+        </div>
+        <footer>
+            <div id="page-footer">
+                <p id="page-footer-content">Copyright &copy 2018 Taxcy</p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -4,100 +4,247 @@
         <meta charset="UTF-8">
         <title>Taxcy</title>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="taxcy.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="taxform.js"></script>
+        <link rel="stylesheet" type="text/css" href="taxform.css">
     </head>
     <body>
         <header>
-            <section id="app-title-container">
-                <p id="app-title-content">
-                    <span id="app-title">TAXCY</span><br>
-                    <span id="app-description">Your property tax assistant</span>
-                </p>
-            </section>
-            <section id="app-certification-container">
-                <p id="app-certification-content">
-                    Already have a certificate number?  Click 
-                    <a href="#">here</a>
-                </p>
-            </section>
-        </header>
-        <section id="body-background">
-            <div id="form-container">
-                <div class="step-header">
-                    <div class="current-step-number-container">
-                        <p class="current-step-number">1</p>
-                    </div>
-                    <div class="current-step-detail-container">
-                        <p class="current-step-detail">User and Contact Information</p>
-                    </div>
+            <div id="page-header">
+                <div id="page-title-container">
+                    <p id="page-title">Taxcy</p>
+                    <p id="page-title-content">Your property tax assistant</p>
                 </div>
-                <div class="step-container">
-                    <div class="form-row">
-                        <p class="label-title">Title</p>
-                        <select class="label-detail" id="title">
-                            <option>Dr</option>
-                            <option>Mr</option>
-                            <option>Ms</option>
-                            <option>Mrs</option>
-                            <option>Rev</option>
-                        </select>
-                    </div>
-                    <div class="form-row form-row-flex">
-                        <div class="form-column">
-                            <p class="label-title">First Name</p>
-                            <input type="text" class="label-detail" id="firstname">
-                        </div>
-                        <div class="form-column" style="width:17%">
-                            <p class="label-title">Middle Initial</p>
-                            <input type="text" class="label-detail" id="middle-initial" style="width:50px">
-                        </div>
-                        <div class="form-column">
-                            <p class="label-title">Last Name</p>
-                            <input type="text" class="label-detail" id="lastname">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <p class="label-title">Phone Number</p>
-                        <input type="text" class="label-detail" id="phoneNumber">
-                    </div>
-                    <div class="form-row">
-                        <p class="label-title">Email Address</p>
-                        <input type="text" class="label-detail" id="email">
-                    </div>
-                    <div class="form-row">
-                        <p class="label-title">Street Address</p>
-                        <input type="text" class="label-detail" id="street">
-                    </div>
-                    <div class="form-row form-row-flex">
-                        <div class="form-column" style="width:23%">
-                            <p class="label-title">City</p>
-                            <input type="text" class="label-detail" value="" style="width:137px" id="city">
-                        </div>
-                        <div class="form-column" style="width:10%">
-                            <p class="label-title">State</p>
-                            <input type="text" class="label-detail" value="" style="width:30%" id="state">
-                        </div>
-                        <div class="form-column">
-                            <p class="label-title">Zip Code</p>
-                            <input type="text" class="label-detail" value="" style="width:20%" id="zipCode">
-                        </div>
-                    </div>
-                </div>
-                <div class="step-footer">
-                    <div align="right">
-                        <a href="javascript:void(0)" class="next-link" >
-                            <div style="width:75px;height:30px;line-height:2.5em;border-radius:5px;background-color:blue">
-                                <span style="margin:10px;color:white">Next >></span>
-                            </div>
-                        </a>
-                    </div>
+                <div id="page-cert-container">
+                    <p id="certification-number-content">
+                        Already have a certification number?
+                    </p>
+                    <table border="0" id="certification-number-object-table">
+                        <tr>
+                            <td style="text-align:center">
+                                <input class="certification-number-object" type="text" id="certNum" value="">
+                            </td>
+                            <td>
+                                <div class="outer-button">
+                                    <a href="javascript:void(0)">
+                                        <div class="button" id="certification-number-button">Submit</div>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-        </section>
-        <input type="hidden" value="index" id="page">
+        </header>
+        <div id="form-background">
+            <!-- BEGIN FORM 1 SECTION TITLE -->
+            <div class="section-container row-flex-container">
+                <div class="section-number-container">
+                    <p class="section-number">1</p>
+                </div>
+                <div class="section-detail-container">
+                    <p class="section-detail">Personal and Contact Information</p>
+                </div>
+            </div>
+            <!-- END FORM 1 SECTION TITLE -->
+            <!-- BEGIN FORM 1: PERSONAL AND CONTACT INFORMATION  -->
+            <div class="form-container">
+                <!-- BEGIN TAX FORM -->
+                <div class="form-object-container">
+
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-right:1px solid black">
+                            <p class="form-entry-label">Salutation</p>
+                            <select style="margin-left:15px" id="salutation">
+                                <option>Dr</option>
+                                <option>Mr</option>
+                                <option>Ms</option>
+                                <option>Mrs</option>
+                            </select>
+                        </div>
+                        <div class="form-object-sub-container">
+                            <p class="form-entry-label"><span id="errOwnerName" style="color:red">*</span>Owner's Name</p>
+                            <input class="form-entry-object-long" type="text" id="ownerName" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                            <p class="form-entry-label"><span id="errPhoneNumber" style="color:red">*</span>Phone Number</p>
+                            <input class="form-entry-object-medium" type="text" id="phoneNumber" value="">
+                        </div>
+                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                            <p class="form-entry-label"><span id="errEmail" style="color:red">*</span>Email Address</p>
+                            <input class="form-entry-object-long" type="text" id="email" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-object-sub-container" style="border-top:1px solid black;border-bottom:1px solid black">
+                        <p class="form-entry-label"><span id="errStreet" style="color:red">*</span>Street</p>
+                        <input class="form-entry-object-long" type="text" id="street" value="">
+                    </div>
+
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-right:1px solid black">
+                            <p class="form-entry-label"><span id="errCity" style="color:red">*</span>City</p>
+                            <input class="form-entry-object-medium" type="text" id="city" value="">
+                        </div>
+                        <div class="form-object-sub-container" style="border-right:1px solid black">
+                            <p class="form-entry-label"><span id="errState" style="color:red">*</span>State</p>
+                            <input class="form-entry-object-very-short" type="text" id="state" value="">
+                        </div>
+                        <div class="form-object-sub-container">
+                            <p class="form-entry-label"><span id="errZipCode" style="color:red">*</span>Zip Code</p>
+                            <input class="form-entry-object-short" type="text" id="zipCode" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-object-sub-container row-flex-container" style="border-top:1px solid black">
+                        <div class="outer-button">
+                            <a href="javascript:void(0)">
+                                <div class="button clear-submit-button" id="clear-page1">Clear</div>
+                            </a>
+                        </div>
+                        <!--style="text-align:center;line-height:1.5em;margin:15px"-->
+                        <div class="outer-button" style="margin-left:10px">
+                            <a href="javascript:void(0)">
+                                <div class="button clear-submit-button" id="submit-page1">Submit</div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- END TAX FORM -->
+                <!-- BEGIN TAX FORM HELP -->
+                <div class="form-help-container">
+                    <p id="help-section-title">Quick Help</p>
+                    <p class="help-title">Phone Number</p>
+                    <p class="help-content">Do not include any formatting when entering your phone number.  Example: 9999999999</p>
+
+                    <p class="help-title">State</p>
+                    <p class="help-content">Please use the correct state code.  Example: California should be entered as CA</p>
+                </div>
+                <!-- END TAX FORM HELP -->
+            </div>
+            <!-- END FORM 1: PERSONAL AND CONTACT INFORMATION  -->
+            <!-- BEGIN FORM 2 SECTION TITLE -->
+            <div class="section-container row-flex-container">
+                <div class="section-number-container">
+                    <p class="section-number">2</p>
+                </div>
+                <div class="section-detail-container">
+                    <p class="section-detail">Taxable Income, Exemptions, Tax Due</p>
+                </div>
+            </div>
+            <!-- END FORM 2 SECTION TITLE -->
+            <!-- BEGIN FORM 2: TAX AND INCOME INFORMATION -->
+            <div class="form-container" style="height:400px;margin-bottom:15px">
+                <!-- BEGIN TAX FORM -->
+                <div class="form-object-container" style="height:400px">
+
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-right:1px solid black">
+                            <p class="form-entry-label">Certification Number</p>
+                            <p class="form-entry-label" id="certNumber"></p>
+                        </div>
+                        <div class="form-object-sub-container">
+                            <p class="form-entry-label">Bill ID</p>
+                            <p class="form-entry-label" id="billID"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                            <p class="form-entry-label">Tax Filing</p>
+                            <select style="margin-left:15px" id="taxFilingMonth">
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <input class="form-entry-object-short" type="text" id="taxFilingYear" value="2018"><span id="errTaxFilingYear" style="color:red">*</span>
+                        </div>
+                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                            <p class="form-entry-label"><span id="errPayDate" style="color:red">*</span>Pay Date</p>
+                            <input type="date" id="payDate" style="width:120px;margin-left:15px">
+                        </div>
+                    </div>
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                            <p class="form-entry-label"><span id="errGrossIncome" style="color:red">*</span>Gross Income</p>
+                            <input class="form-entry-object-medium" type="text" id="grossIncome" value="">
+                        </div>
+                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                            <p class="form-entry-label"><span id="errPenalties" style="color:red">*</span>Penalties</p>
+                            <input class="form-entry-object-medium" type="text" id="penalties" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                            <p class="form-entry-label"><span id="errExemptPR" style="color:red">*</span>Exempt PR</p>
+                            <input class="form-entry-object-medium" type="text" id="exemptPR" value="">
+                        </div>
+                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                            <p class="form-entry-label"><span id="errExemptCorp" style="color:red">*</span>Exempt Corp</p>
+                            <input class="form-entry-object-medium" type="text" id="exemptCorp" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-object-sub-container row-flex-container">
+                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                            <p class="form-entry-label"><span id="errExemptLess" style="color:red">*</span>Exempt Less</p>
+                            <input class="form-entry-object-medium" type="text" id="exemptLess" value="">
+                        </div>
+                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                            <p class="form-entry-label"><span id="errExemptGov" style="color:red">*</span>Exempt Gov</p>
+                            <input class="form-entry-object-medium" type="text" id="exemptGov" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-object-sub-container row-flex-container" style="border-top:1px solid black">
+                        <div class="outer-button">
+                            <a href="javascript:void(0)">
+                                <div class="button clear-submit-button" id="clear-page2">Clear</div>
+                            </a>
+                        </div>
+                        <!--style="text-align:center;line-height:1.5em;margin:15px"-->
+                        <div class="outer-button" style="margin-left:10px">
+                            <a href="javascript:void(0)">
+                                <div class="button clear-submit-button" id="submit-page2">Submit</div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- END TAX FORM -->
+                <!-- BEGIN TAX FORM HELP -->
+                <div class="form-help-container" style="height:400px">
+                    <p id="help-section-title">Quick Help</p>
+
+                    <p class="help-title">Certification Number</p>
+                    <p class="help-content">
+                        <span style="color:red">Important!</span> Make syreyou keep a copy of the displayed certification number.  You can use this later to view the filled-up form
+                    </p>
+
+                    <p class="help-title">All fields that require figures (ie. Gross Income, Penalties, ...)</p>
+                    <p class="help-content">Do not include any formatting when entering monetary values.  Example: 1999.99</p>
+                </div>
+                <!-- END TAX FORM HELP -->
+            </div>
+            <!-- END FORM 2: TAX AND INCOME INFORMATION -->
+        </div>
         <footer>
-            <p id="footer-content">Copyright &copy 2018 Taxcy</p>
+            <div id="page-footer">
+                <p id="page-footer-content">Copyright &copy 2018 Taxcy</p>
+            </div>
         </footer>
     </body>
 </html>
