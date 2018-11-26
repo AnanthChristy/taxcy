@@ -73,7 +73,6 @@ $(document).ready(function() {
         $('#errTaxFilingYear').hide();
         $('#errPayDate').hide();
         $('#errGrossIncome').hide();
-        $('#errPenalties').hide();
         $('#errExemptPR').hide();
         $('#errExemptCorp').hide();
         $('#errExemptLess').hide();
@@ -108,7 +107,7 @@ $(document).ready(function() {
             clnt_tax["payDate"] = $('#payDate').val();
             clnt_tax["grossIncome"] = $('#grossIncome').val();
             clnt_tax["exemption"] = clnt_exempt;
-            clnt_tax["penalties"] = $('#penalties').val();
+            clnt_tax["penalties"] = 0;
             
             $.ajax({
                 type: "POST",
@@ -155,11 +154,6 @@ $(document).ready(function() {
         if($('#grossIncome').val().trim().length == 0) {
             isValid = false;
             $('#errGrossIncome').show();
-        }
-
-        if($('#penalties').val().trim().length == 0) {
-            isValid = false;
-            $('#errPenalties').show();
         }
 
         if($('#exemptPR').val().trim().length == 0) {
