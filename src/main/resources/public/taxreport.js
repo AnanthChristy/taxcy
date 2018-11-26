@@ -2,9 +2,6 @@ $(document).ready(function() {
     var clnt_tax = {};
     var clnt_data = {};
 
-    var param = window.location.search.substring(1);
-    var certNo = param.substring(5, param.length);
-
     clnt_data = testDataPersonal();
     clnt_tax = testDataTax();
 
@@ -34,10 +31,12 @@ $(document).ready(function() {
 
     function getPersonalInfo() {
         //https://taxcy.herokuapp.com/chatbot/getInfo/T1750254
+        var param = window.location.search.substring(1);
+        var certNo = param.substring(5, param.length);
 
         $.ajax({
             type: "GET",
-            url: "https://taxcy.herokuapp.com/chatbot/getInfo/T1164670",
+            url: "https://taxcy.herokuapp.com/chatbot/getInfo/" + certNo,
             timeout: 300000,
             contentType: "application/json;charset=UTF-8",
             success: function(info) {
