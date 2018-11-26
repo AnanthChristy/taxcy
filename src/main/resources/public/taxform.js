@@ -48,16 +48,11 @@ $(document).ready(function() {
             );
             */
 
-            $.post("https://taxcy.herokuapp.com/chatbot/propertyInfo", clnt_data, function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-
-            /*
             $.ajax({
                 type: "POST",
                 url: "https://taxcy.herokuapp.com/chatbot/propertyInfo",
                 data: JSON.stringify(clnt_data),
-                contentType: "application/json; charset=utf-8",
+                contentType: "application/json;charset=UTF-8",
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
@@ -80,7 +75,6 @@ $(document).ready(function() {
                     );
                 }
             });
-            */
         }
     });
 
@@ -153,7 +147,7 @@ $(document).ready(function() {
                 type: "POST",
                 url: "https://taxcy.herokuapp.com/chatbot/calculation",
                 data: JSON.stringify(clnt_tax),
-                contentType: "application/json; charset=utf-8",
+                contentType: "application/json;charset=UTF-8",
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
