@@ -43,34 +43,19 @@ $(document).ready(function() {
             timeout: 300000,
             contentType: "application/json;charset=UTF-8",
             success: function(tax_info) {
-                console.log("Success");
-                console.log("Year: " + tax_info[0].year);
-                console.log("Month: " + tax_info[0].month);
-                console.log("Pay Date: " + tax_info[0].payDate);
-                console.log("Gross Income: " + tax_info[0].grossIncome);
-                console.log("Taxable Income: " + tax_info[0].taxableIncome);
-                console.log("Tax Due: " + tax_info[0].taxDue);
-                console.log("Penalties: " + tax_info[0].penalties);
-                console.log("Total Tax Due: " + tax_info[0].totalTaxDue);
-                console.log("Exempt PR: " + tax_info[0].exemption.exemptPR);
-                console.log("Exempt Corp: " + tax_info[0].exemption.exemptCorp);
-                console.log("Exempt Less: " + tax_info[0].exemption.exemptLess);
-                console.log("Exempt Gov: " + tax_info[0].exemption.exemptGov);
-                console.log("Total Exempt: " + tax_info[0].exemption.totalExempt);
-
-                $('#taxFilingYear').text(info.year);
-                $('#taxFilingMonth').text(info.month);
-                $('#payDate').text(format_date(info.payDate));
-                $('#grossIncome').text(format_figures(info.grossIncome));
-                $('#exemptPR').text(format_figures(info.exemption.exemptPR));
-                $('#taxableIncome').text(format_figures(info.taxableIncome));
-                $('#exemptCorp').text(format_figures(info.exemption.exemptCorp));
-                $('#taxDue').text(format_figures(info.taxDue));
-                $('#exemptLess').text(format_figures(info.exemption.exemptLess));
-                $('#penalties').text(format_figures(info.penalties));
-                $('#exemptGov').text(format_figures(info.exemption.exemptGov));
-                $('#totalTaxDue').text(format_figures(info.totalTaxDue));
-                $('#totalExempt').text(format_figures(info.exemption.totalExempt));
+                $('#taxFilingYear').text(tax_info[0].year);
+                $('#taxFilingMonth').text(tax_info[0].month);
+                $('#payDate').text(format_date(tax_info[0].payDate));
+                $('#grossIncome').text(format_figures(tax_info[0].grossIncome));
+                $('#exemptPR').text(format_figures(tax_info[0].exemption.exemptPR));
+                $('#taxableIncome').text(format_figures(tax_info[0].taxableIncome));
+                $('#exemptCorp').text(format_figures(tax_info[0].exemption.exemptCorp));
+                $('#taxDue').text(format_figures(tax_info[0].taxDue));
+                $('#exemptLess').text(format_figures(tax_info[0].exemption.exemptLess));
+                $('#penalties').text(format_figures(tax_info[0].penalties));
+                $('#exemptGov').text(format_figures(tax_info[0].exemption.exemptGov));
+                $('#totalTaxDue').text(format_figures(tax_info[0].totalTaxDue));
+                $('#totalExempt').text(format_figures(tax_info[0].exemption.totalExempt));
             },
             error: function() {
                 console.log("TaxReport: Error communicating with API (chatbot/getTaxBillInfo)");
