@@ -35,19 +35,6 @@ $(document).ready(function() {
             clnt_data["phoneNumber"] = $('#phoneNumber').val();
             clnt_data["email"] = $('#email').val();
 
-            /*
-            $('#certNumber').text('T1750254');
-            console.log(
-                "Owner Name: " + clnt_data.ownerName + "\n" +
-                "Phone Number: " + clnt_data.phoneNumber + "\n" +
-                "Email: " + clnt_data.email + "\n" +
-                "Street: " + clnt_data.propAdd.street + "\n" +
-                "City: " + clnt_data.propAdd.city + "\n" +
-                "State: " + clnt_data.propAdd.state + "\n" +
-                "Zip Code: " + clnt_data.propAdd.zipCode + "\n"
-            );
-            */
-
             $.ajax({
                 type: "POST",
                 url: "https://taxcy.herokuapp.com/chatbot/propertyInfo",
@@ -123,22 +110,6 @@ $(document).ready(function() {
             clnt_tax["exemption"] = clnt_exempt;
             clnt_tax["penalties"] = $('#penalties').val();
             
-            /*
-            console.log(
-                "Certification Number: " + clnt_tax.certNo + "\n" +
-                "Filing Year: " + clnt_tax.year + "\n" +
-                "Filing Month: " + clnt_tax.month + "\n" +
-                "Pay Date: " + clnt_tax.payDate + "\n" +
-                "Gross Income: " + clnt_tax.grossIncome + "\n" +
-                "Penalties: " + clnt_tax.penalties + "\n" +
-                "Exempt PR: " + clnt_tax.exemption.exemptPR + "\n" +
-                "Exempt Corp: " + clnt_tax.exemption.exemptCorp + "\n" +
-                "Exempt Less: " + clnt_tax.exemption.exemptLess + "\n" +
-                "Exempt Gov: " + clnt_tax.exemption.exemptGov
-            );
-            window.location.replace("taxreport.html?cert=" + clnt_tax.certNo);
-            */
-
             $.ajax({
                 type: "POST",
                 url: "https://taxcy.herokuapp.com/chatbot/calculation",
@@ -147,7 +118,6 @@ $(document).ready(function() {
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
-                    alert("Bill ID: " + info.billId);
                     window.location.replace("taxreport.html?cert=" + info.certNo);
                 },
                 error: function() {

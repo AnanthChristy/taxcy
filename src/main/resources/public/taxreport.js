@@ -13,7 +13,6 @@ $(document).ready(function() {
     });
 
     function getPersonalInfo(certificationNumber) {
-        //https://taxcy.herokuapp.com/chatbot/getInfo/T1750254
         $.ajax({
             type: "GET",
             url: "https://taxcy.herokuapp.com/chatbot/getInfo/" + certificationNumber,
@@ -36,7 +35,6 @@ $(document).ready(function() {
     }
 
     function getTaxInfo(certificationNumber) {
-        //https://taxcy.herokuapp.com/chatbot/getTaxBillInfo/T1995405
         $.ajax({
             type: "GET",
             url: "https://taxcy.herokuapp.com/chatbot/getTaxBillInfo/" + certificationNumber,
