@@ -57,7 +57,6 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function(info) {
                     console.log("Success!");
-                    alert("Cert No: " + info.certNo);
                     console.log("Returned cert no: " + info.certNo);
                     $('#certNumber').text(info.certNo);
                 },
@@ -151,6 +150,8 @@ $(document).ready(function() {
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
+                    alert("Success");
+                    alert("Bill ID: " + info.billId);
                     window.location.replace("taxreport.html?cert=" + info.certNo);
                 },
                 error: function() {
