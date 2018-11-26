@@ -56,6 +56,9 @@ $(document).ready(function() {
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
+                    console.log("Success!");
+                    alert("Cert No: " + info.certNo);
+                    console.log("Returned cert no: " + info.certNo);
                     $('#certNumber').text(info.certNo);
                 },
                 error: function() {
