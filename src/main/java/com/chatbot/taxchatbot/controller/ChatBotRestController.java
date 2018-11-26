@@ -80,6 +80,7 @@ public class ChatBotRestController {
         double taxableIncome = grossIncome - exemption.getTotalExempt() ;
         bill.setTaxableIncome(taxableIncome);
         bill.setTaxDue((taxableIncome * 0.01));
+        bill.setTotalTaxDue((taxableIncome * 0.01));
         return bill;
     }
 }
