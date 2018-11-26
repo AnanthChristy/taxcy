@@ -8,6 +8,8 @@ $(document).ready(function() {
     clnt_data = testDataPersonal();
     clnt_tax = testDataTax();
 
+    getPersonalInfo();
+
     $('#taxFilingYear').text(clnt_tax.year);
     $('#taxFilingMonth').text(clnt_tax.month);
     $('#payDate').text(format_date(clnt_tax.payDate));
@@ -48,7 +50,7 @@ $(document).ready(function() {
                 console.log("City: " + info.propAdd.city);
                 console.log("State: " + info.propAdd.state);
                 console.log("Zip Code: " + info.propAdd.zipCode);
-                
+
                 $('#certNumber').text(info.certNo);
                 $('#ownerName').text(info.ownerName);
                 $('#phoneNumber').text(info.phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'));
