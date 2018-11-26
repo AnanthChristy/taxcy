@@ -44,19 +44,19 @@ $(document).ready(function() {
             contentType: "application/json;charset=UTF-8",
             success: function(tax_info) {
                 console.log("Success");
-                console.log("Year: " + tax_info.year);
-                console.log("Month: " + tax_info.month);
-                console.log("Pay Date: " + tax_info.payDate);
-                console.log("Gross Income: " + tax_info.grossIncome);
-                console.log("Taxable Income: " + tax_info.taxableIncome);
-                console.log("Tax Due: " + tax_info.taxDue);
-                console.log("Penalties: " + tax_info.penalties);
-                console.log("Total Tax Due: " + tax_info.totalTaxDue);
-                console.log("Exempt PR: " + tax_info.exemption.exemptPR);
-                console.log("Exempt Corp: " + tax_info.exemption.exemptCorp);
-                console.log("Exempt Less: " + tax_info.exemption.exemptLess);
-                console.log("Exempt Gov: " + tax_info.exemption.exemptGov);
-                console.log("Total Exempt: " + tax_info.exemption.totalExempt);
+                console.log("Year: " + tax_info[0].year);
+                console.log("Month: " + tax_info[0].month);
+                console.log("Pay Date: " + tax_info[0].payDate);
+                console.log("Gross Income: " + tax_info[0].grossIncome);
+                console.log("Taxable Income: " + tax_info[0].taxableIncome);
+                console.log("Tax Due: " + tax_info[0].taxDue);
+                console.log("Penalties: " + tax_info[0].penalties);
+                console.log("Total Tax Due: " + tax_info[0].totalTaxDue);
+                console.log("Exempt PR: " + tax_info[0].exemption.exemptPR);
+                console.log("Exempt Corp: " + tax_info[0].exemption.exemptCorp);
+                console.log("Exempt Less: " + tax_info[0].exemption.exemptLess);
+                console.log("Exempt Gov: " + tax_info[0].exemption.exemptGov);
+                console.log("Total Exempt: " + tax_info[0].exemption.totalExempt);
 
                 $('#taxFilingYear').text(info.year);
                 $('#taxFilingMonth').text(info.month);
