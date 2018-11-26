@@ -147,6 +147,7 @@ $(document).ready(function() {
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
+                    alert("Bill ID: " + info.billId);
                     window.location.replace("taxreport.html?cert=" + info.certNo);
                 },
                 error: function() {
