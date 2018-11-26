@@ -56,13 +56,10 @@ $(document).ready(function() {
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
-                    console.log("Success!");
-                    console.log("Returned cert no: " + info.certNo);
                     $('#certNumber').text(info.certNo);
                 },
                 error: function() {
-                    alert("Error communicating with API");
-                    console.log("Error communicating with API");
+                    console.log("TaxForm: Error communicating with API (chatbot/propertyInfo)");
                     console.log(
                         "Owner Name: " + clnt_data.ownerName + "\n" +
                         "Phone Number: " + clnt_data.phoneNumber + "\n" +
@@ -150,13 +147,10 @@ $(document).ready(function() {
                 crossDomain: true,
                 dataType: "json",
                 success: function(info) {
-                    alert("Success");
-                    alert("Bill ID: " + info.billId);
                     window.location.replace("taxreport.html?cert=" + info.certNo);
                 },
                 error: function() {
-                    alert("Error communicating with API");
-                    console.log("Error communicating with API");
+                    console.log("TaxForm: Error communicating with API (chatbot/calculation)");
                     console.log(
                         "Certification Number: " + clnt_tax.certNo + "\n" +
                         "Filing Year: " + clnt_tax.year + "\n" +

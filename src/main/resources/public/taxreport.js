@@ -8,15 +8,6 @@ $(document).ready(function() {
     clnt_data = testDataPersonal();
     clnt_tax = testDataTax();
 
-    $('#ownerName').text(clnt_data.ownerName);
-    $('#certNumber').text(certNo);
-    $('#phoneNumber').text(clnt_data.phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'));
-    $('#email').text(clnt_data.email);
-    $('#street').text(clnt_data.propAdd.street);
-    $('#city').text(clnt_data.propAdd.city);
-    $('#state').text(clnt_data.propAdd.state);
-    $('#zipCode').text(clnt_data.propAdd.zipCode);
-
     $('#taxFilingYear').text(clnt_tax.year);
     $('#taxFilingMonth').text(clnt_tax.month);
     $('#payDate').text(format_date(clnt_tax.payDate));
@@ -42,11 +33,26 @@ $(document).ready(function() {
     function getPersonalInfo() {
         //https://taxcy.herokuapp.com/chatbot/getInfo/T1750254
 
-        $.get("https://taxcy.herokuapp.com/chatbot/getAllPropertyInfo/" + certNo, function(data, status) {
-            alert("Data!");
-            alert(data);
-            alert("Status: " + status);
+        $.ajax({
+            type: "GET",
+            url: "https://taxcy.herokuapp.com/chatbot/getInfo/T1164670",
+            timeout: 300000,
+            contentType: "application/json;charset=UTF-8",
+            success: function(info) {
+                $('#certNumber').text(info.certNo);
+                $('#ownerName').text(info.ownerName);
+                $('#phoneNumber').text(info.phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'));
+                $('#email').text(info.email);
+                $('#street').text(info.propAdd.street);
+                $('#city').text(info.propAdd.city);
+                $('#state').text(info.propAdd.state);
+                $('#zipCode').text(info.propAdd.zipCode);
+            },
+            error: function() {
+                console.log("TaxReport: Error communicating with API (chatbot/getInfo)");
+            }
         });
+
     }
 
     function format_date(date_value) {
