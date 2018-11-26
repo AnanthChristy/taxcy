@@ -51,7 +51,7 @@ $(document).ready(function() {
             $.ajax({
                 type: "POST",
                 url: "https://taxcy.herokuapp.com/chatbot/propertyInfo",
-                data: JSON.stringify(data),
+                data: JSON.stringify(clnt_data),
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 dataType: "json",
