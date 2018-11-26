@@ -20,16 +20,6 @@ $(document).ready(function() {
             timeout: 300000,
             contentType: "application/json;charset=UTF-8",
             success: function(info) {
-                console.log("TaxReport: Success!");
-                console.log("Certification Number: " + info.certNo);
-                console.log("Owner Name: " + info.ownerName);
-                console.log("Phone Number: " + info.phoneNumber);
-                console.log("Email: " + info.email);
-                console.log("Street: " + info.propAdd.street);
-                console.log("City: " + info.propAdd.city);
-                console.log("State: " + info.propAdd.state);
-                console.log("Zip Code: " + info.propAdd.zipCode);
-
                 $('#certNumber').text(info.certNo);
                 $('#ownerName').text(info.ownerName);
                 $('#phoneNumber').text(info.phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'));
@@ -52,21 +42,21 @@ $(document).ready(function() {
             url: "https://taxcy.herokuapp.com/chatbot/getTaxBillInfo/" + certificationNumber,
             timeout: 300000,
             contentType: "application/json;charset=UTF-8",
-            success: function(info) {
+            success: function(tax_info) {
                 console.log("Success");
-                console.log("Year: " + info.year);
-                console.log("Month: " + info.month);
-                console.log("Pay Date: " + info.payDate);
-                console.log("Gross Income: " + info.grossIncome);
-                console.log("Taxable Income: " + info.taxableIncome);
-                console.log("Tax Due: " + info.taxDue);
-                console.log("Penalties: " + info.penalties);
-                console.log("Total Tax Due: " + info.totalTaxDue);
-                console.log("Exempt PR: " + info.exemption.exemptPR);
-                console.log("Exempt Corp: " + info.exemption.exemptCorp);
-                console.log("Exempt Less: " + info.exemption.exemptLess);
-                console.log("Exempt Gov: " + info.exemption.exemptGov);
-                console.log("Total Exempt: " + info.exemption.totalExempt);
+                console.log("Year: " + tax_info.year);
+                console.log("Month: " + tax_info.month);
+                console.log("Pay Date: " + tax_info.payDate);
+                console.log("Gross Income: " + tax_info.grossIncome);
+                console.log("Taxable Income: " + tax_info.taxableIncome);
+                console.log("Tax Due: " + tax_info.taxDue);
+                console.log("Penalties: " + tax_info.penalties);
+                console.log("Total Tax Due: " + tax_info.totalTaxDue);
+                console.log("Exempt PR: " + tax_info.exemption.exemptPR);
+                console.log("Exempt Corp: " + tax_info.exemption.exemptCorp);
+                console.log("Exempt Less: " + tax_info.exemption.exemptLess);
+                console.log("Exempt Gov: " + tax_info.exemption.exemptGov);
+                console.log("Total Exempt: " + tax_info.exemption.totalExempt);
 
                 $('#taxFilingYear').text(info.year);
                 $('#taxFilingMonth').text(info.month);
