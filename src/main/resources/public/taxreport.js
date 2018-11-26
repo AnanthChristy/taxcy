@@ -74,7 +74,9 @@ $(document).ready(function() {
     }
 
     function format_date(date_value) {
+        console.log("Origin date: " + date_value);
         var new_date = new Date(date_value);
+        console.log("New date: " + new_date);
         return (new_date.getMonth() + 1) + "/" + (new_date.getDate() + 1) + "/" + new_date.getFullYear();
     }
 
