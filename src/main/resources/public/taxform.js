@@ -151,29 +151,39 @@ $(document).ready(function() {
             $('#errPayDate').show();
         }
 
-        if($('#grossIncome').val().trim().length == 0) {
+        if($('#grossIncome').val().trim().length == 0 || !$.isNumeric($('#grossIncome').val())) {
             isValid = false;
             $('#errGrossIncome').show();
+        } else {
+            $('#errGrossIncome').hide();
         }
 
-        if($('#exemptPR').val().trim().length == 0) {
+        if($('#exemptPR').val().trim().length == 0 || !$.isNumeric($('#exemptPR').val())) {
             isValid = false;
             $('#errExemptPR').show();
+        } else {
+            $('#errExemptPR').hide();
         }
 
-        if($('#exemptCorp').val().trim().length == 0) {
+        if($('#exemptCorp').val().trim().length == 0 || !$.isNumeric($('#exemptCorp').val())) {
             isValid = false;
             $('#errExemptCorp').show();
+        } else {
+            $('#errExemptCorp').hide();
         }
 
-        if($('#exemptLess').val().trim().length == 0) {
+        if($('#exemptLess').val().trim().length == 0 || !$.isNumeric($('#exemptLess').val())) {
             isValid = false;
             $('#errExemptLess').show();
+        } else {
+            $('#errExemptLess').hide();
         }
 
-        if($('#exemptGov').val().trim().length == 0) {
+        if($('#exemptGov').val().trim().length == 0 || !$.isNumeric($('#exemptGov').val())) {
             isValid = false;
             $('#errExemptGov').show();
+        } else {
+            $('#errExemptGov').hide();
         }
 
         return isValid;
@@ -186,36 +196,50 @@ $(document).ready(function() {
         if($('#ownerName').val().trim().length == 0) {
             isValid = false;
             $('#errOwnerName').show();
+        } else {
+            $('#errOwnerName').hide();
         }
 
-        if($('#phoneNumber').val().trim().length == 0) {
+        if($('#phoneNumber').val().trim().length == 0 || !$.isNumeric($('#phoneNumber').val())) {
             isValid = false;
             $('#errPhoneNumber').show();
+        } else {
+            $('#errPhoneNumber').hide();
         }
 
         if($('#email').val().trim().length == 0) {
             isValid = false;
             $('#errEmail').show();
+        } else {
+            $('#errEmail').hide();
         }
 
         if($('#street').val().trim().length == 0) {
             isValid = false;
             $('#errStreet').show();
+        } else {
+            $('#errStreet').hide();
         }
 
         if($('#city').val().trim().length == 0) {
             isValid = false;
             $('#errCity').show();
+        } else {
+            $('#errCity').hide();
         }
 
         if($('#state').val().trim().length == 0) {
             isValid = false;
             $('#errState').show();
+        } else {
+            $('#errState').hide();
         }
 
-        if($('#zipCode').val().trim().length == 0) {
+        if($('#zipCode').val().trim().length == 0 || !$.isNumeric($('#zipCode').val())) {
             isValid = false;
             $('#errZipCode').show();
+        } else {
+            $('#errZipCode').hide();
         }
 
         return isValid;

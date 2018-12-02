@@ -37,7 +37,7 @@
         </header>
         <div id="form-background">
             <!-- BEGIN FORM 1 SECTION TITLE -->
-            <div class="section-container row-flex-container">
+            <div class="section-container">
                 <div class="section-number-container">
                     <p class="section-number">1</p>
                 </div>
@@ -47,12 +47,12 @@
             </div>
             <!-- END FORM 1 SECTION TITLE -->
             <!-- BEGIN FORM 1: PERSONAL AND CONTACT INFORMATION  -->
-            <div class="form-container">
+            <div id="form-contact-container">
                 <!-- BEGIN TAX FORM -->
                 <div class="form-object-container">
 
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container" style="border-right:1px solid black">
+                    <div class="row-one-plus-element">
+                        <div class="row-one-element element-border-right">
                             <p class="form-entry-label">Salutation</p>
                             <select style="margin-left:15px" id="salutation">
                                 <option>Dr</option>
@@ -61,50 +61,49 @@
                                 <option>Mrs</option>
                             </select>
                         </div>
-                        <div class="form-object-sub-container">
+                        <div class="row-one-element">
                             <p class="form-entry-label"><span id="errOwnerName" style="color:red">*</span>Owner's Name</p>
-                            <input class="form-entry-object-long" type="text" id="ownerName" value="">
+                            <input class="form-entry-object-long" type="text" id="ownerName" value="" required>
                         </div>
                     </div>
 
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                    <div class="row-one-plus-element">
+                        <div class="row-one-element element-border-top element-border-right">
                             <p class="form-entry-label"><span id="errPhoneNumber" style="color:red">*</span>Phone Number</p>
-                            <input class="form-entry-object-medium" type="text" id="phoneNumber" value="">
+                            <input class="form-entry-object-medium" type="text" id="phoneNumber" value="" required>
                         </div>
-                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                        <div class="row-one-element element-border-top">
                             <p class="form-entry-label"><span id="errEmail" style="color:red">*</span>Email Address</p>
-                            <input class="form-entry-object-long" type="text" id="email" value="">
+                            <input class="form-entry-object-long" type="text" id="email" value="" required>
                         </div>
                     </div>
 
-                    <div class="form-object-sub-container" style="border-top:1px solid black;border-bottom:1px solid black">
+                    <div class="row-one-element element-border-top">
                         <p class="form-entry-label"><span id="errStreet" style="color:red">*</span>Street</p>
-                        <input class="form-entry-object-long" type="text" id="street" value="">
+                        <input class="form-entry-object-long" type="text" id="street" value="" required>
                     </div>
 
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container" style="border-right:1px solid black">
+                    <div id="row-csz-element">
+                        <div class="row-one-element element-border-right element-border-top">
                             <p class="form-entry-label"><span id="errCity" style="color:red">*</span>City</p>
-                            <input class="form-entry-object-medium" type="text" id="city" value="">
+                            <input class="form-entry-object-medium" type="text" id="city" value="" required>
                         </div>
-                        <div class="form-object-sub-container" style="border-right:1px solid black">
+                        <div class="row-one-element element-border-right element-border-top">
                             <p class="form-entry-label"><span id="errState" style="color:red">*</span>State</p>
-                            <input class="form-entry-object-very-short" type="text" id="state" value="">
+                            <input class="form-entry-object-very-short" type="text" id="state" value="" required>
                         </div>
-                        <div class="form-object-sub-container">
+                        <div class="row-one-element element-border-top">
                             <p class="form-entry-label"><span id="errZipCode" style="color:red">*</span>Zip Code</p>
-                            <input class="form-entry-object-short" type="text" id="zipCode" value="">
+                            <input class="form-entry-object-short" type="text" id="zipCode" value="" required>
                         </div>
                     </div>
 
-                    <div class="form-object-sub-container row-flex-container" style="border-top:1px solid black">
+                    <div class="button-row-element element-border-top">
                         <div class="outer-button">
                             <a href="javascript:void(0)">
                                 <div class="button clear-submit-button" id="clear-page1">Clear</div>
                             </a>
                         </div>
-                        <!--style="text-align:center;line-height:1.5em;margin:15px"-->
                         <div class="outer-button" style="margin-left:10px">
                             <a href="javascript:void(0)">
                                 <div class="button clear-submit-button" id="submit-page1">Submit</div>
@@ -127,7 +126,7 @@
             </div>
             <!-- END FORM 1: PERSONAL AND CONTACT INFORMATION  -->
             <!-- BEGIN FORM 2 SECTION TITLE -->
-            <div class="section-container row-flex-container">
+            <div class="section-container">
                 <div class="section-number-container">
                     <p class="section-number">2</p>
                 </div>
@@ -137,19 +136,17 @@
             </div>
             <!-- END FORM 2 SECTION TITLE -->
             <!-- BEGIN FORM 2: TAX AND INCOME INFORMATION -->
-            <div class="form-container" style="height:400px;margin-bottom:15px">
+            <div id="form-tax-container">
                 <!-- BEGIN TAX FORM -->
-                <div class="form-object-container" style="height:400px">
+                <div class="form-tax-object-container">
 
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container">
+                        <div class="row-one-element">
                             <p class="form-entry-label">Certification Number</p>
                             <p class="form-entry-label" id="certNumber"></p>
                         </div>
-                    </div>
 
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                    <div class="row-one-plus-element">
+                        <div class="row-one-element element-border-top element-border-right">
                             <p class="form-entry-label">Tax Filing</p>
                             <select style="margin-left:15px" id="taxFilingMonth">
                                 <option>January</option>
@@ -167,47 +164,45 @@
                             </select>
                             <input class="form-entry-object-short" type="text" id="taxFilingYear" value="2018"><span id="errTaxFilingYear" style="color:red">*</span>
                         </div>
-                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                        <div class="row-one-element element-border-top">
                             <p class="form-entry-label"><span id="errPayDate" style="color:red">*</span>Pay Date</p>
                             <input type="date" id="payDate" style="width:120px;margin-left:15px">
                         </div>
                     </div>
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container" style="border-top:1px solid black">
-                            <p class="form-entry-label"><span id="errGrossIncome" style="color:red">*</span>Gross Income</p>
-                            <input class="form-entry-object-medium" type="text" id="grossIncome" value="">
-                        </div>
+
+                    <div class="row-one-element element-border-top">
+                        <p class="form-entry-label"><span id="errGrossIncome" style="color:red">*</span>Gross Income</p>
+                        <input class="form-entry-object-medium" type="text" id="grossIncome" value="">
                     </div>
 
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                    <div class="row-one-plus-element">
+                        <div class="row-one-element element-border-top element-border-right">
                             <p class="form-entry-label"><span id="errExemptPR" style="color:red">*</span>Exempt PR</p>
                             <input class="form-entry-object-medium" type="text" id="exemptPR" value="">
                         </div>
-                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                        <div class="row-one-element element-border-top">
                             <p class="form-entry-label"><span id="errExemptCorp" style="color:red">*</span>Exempt Corp</p>
                             <input class="form-entry-object-medium" type="text" id="exemptCorp" value="">
                         </div>
                     </div>
 
-                    <div class="form-object-sub-container row-flex-container">
-                        <div class="form-object-sub-container" style="border-top:1px solid black;border-right:1px solid black">
+                    <div class="row-one-plus-element">
+                        <div class="row-one-element element-border-top element-border-right">
                             <p class="form-entry-label"><span id="errExemptLess" style="color:red">*</span>Exempt Less</p>
                             <input class="form-entry-object-medium" type="text" id="exemptLess" value="">
                         </div>
-                        <div class="form-object-sub-container" style="border-top:1px solid black">
+                        <div class="row-one-element element-border-top">
                             <p class="form-entry-label"><span id="errExemptGov" style="color:red">*</span>Exempt Gov</p>
                             <input class="form-entry-object-medium" type="text" id="exemptGov" value="">
                         </div>
                     </div>
 
-                    <div class="form-object-sub-container row-flex-container" style="border-top:1px solid black">
+                    <div class="button-row-element element-border-top">
                         <div class="outer-button">
                             <a href="javascript:void(0)">
                                 <div class="button clear-submit-button" id="clear-page2">Clear</div>
                             </a>
                         </div>
-                        <!--style="text-align:center;line-height:1.5em;margin:15px"-->
                         <div class="outer-button" style="margin-left:10px">
                             <a href="javascript:void(0)">
                                 <div class="button clear-submit-button" id="submit-page2">Submit</div>
@@ -218,9 +213,8 @@
                 </div>
                 <!-- END TAX FORM -->
                 <!-- BEGIN TAX FORM HELP -->
-                <div class="form-help-container" style="height:400px">
+                <div class="form-help-tax-container">
                     <p id="help-section-title">Quick Help</p>
-
                     <p class="help-title">Certification Number</p>
                     <p class="help-content">
                         <span style="color:red">Important!</span> Make syreyou keep a copy of the displayed certification number.  You can use this later to view the filled-up form
